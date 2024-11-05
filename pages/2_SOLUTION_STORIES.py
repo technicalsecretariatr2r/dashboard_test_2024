@@ -10,7 +10,7 @@ import matplotlib.ticker as ticker
 from matplotlib.ticker import MaxNLocator
 from matplotlib.ticker import ScalarFormatter
 from matplotlib.ticker import FuncFormatter
-from wordcloud import WordCloud, STOPWORDS
+# from wordcloud import WordCloud, STOPWORDS
 from streamlit_folium import st_folium
 import folium
 import plotly.graph_objects as go
