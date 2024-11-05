@@ -1,0 +1,32 @@
+﻿rtrcampgoverall;stage_code;ranking;stage;description
+10.2;5;1;PLAN 2023;All tools are reported.
+9.3;5;2;PLAN 2023;"Plan2022 and Plan2023 tools, Pledge, and GI tools are reported; RA is pending (optional)."
+8.4;5;3;PLAN 2023;GI, RA, Pledge and Plan2023 tools are reported.
+7.5;5;4;PLAN 2023;GI, Pledge, and Plan2023 tools are reported.
+7.2;4;5;Pre PLAN;"GI, Plan2022, and Pledge tools are reported; Plan2023 is pending."
+6.3;4;6;Pre PLAN;"GI, Plan2022, and Pledge tools are reported; Plan2023 is pending."
+5.4;3;7;PLEDGE;"GI and Pledge tools are reported; Plan2023 is pending."
+4.5;3;8;PLEDGE;"GI and Pledge tools are reported; Plan2023 is pending."
+7.7;2;9;GI;"GI, RA, Plan2022, and Plan2023 tools are reported; Pledge is pending."
+6.8;2;10;GI;"Plan2022 and Plan2023 tools are reported; Pledge is pending."
+5.9;2;11;GI;"Plan2023 and GI tools are reported; Pledge is pending."
+5.2;2;12;GI;"Plan2022 and Pledge tools are reported; GI and Plan2023 tools are pending."
+5;2;13;GI;"Plan2023 and GI tools are reported; Pledge is pending."
+4.7;2;14;GI;"GI and Plan2022 tools are reported; Pledge and Plan2023 tools are pending."
+3.8;2;15;GI;"GI and Plan2022 tools are reported; Pledge and Plan2023 tools are pending."
+2.9;2;16;GI;Currently at GI (+RA2022).
+2;2;17;GI;Currently at GI.
+8.2;1;18;Pre GI;"Plan2022 and Plan2023 tools, Pledge, and RA tools are reported; GI is pending."
+7.3;1;19;Pre GI;"Plan2022, Plan2023, and Pledge tools are reported; GI is pending."
+6.4;1;20;Pre GI;"Plan2023, Pledge, and RA tools are reported; GI is pending."
+5.7;1;21;Pre GI;"Plan2022 and Plan2023 tools are reported; RA, GI, and Pledge tools are pending."
+5.5;1;22;Pre GI;"Plan2023 and Pledge tools are reported; GI is pending."
+4.8;1;23;Pre GI;"Plan2022 and Plan2023 tools are reported; GI and Pledge tools are pending."
+4.3;1;24;Pre GI;"Plan2022 and Pledge tools are reported; GI is pending."
+3.9;1;25;Pre GI;"Plan2023 and RA tools are reported; all other tools are pending."
+3;1;26;Pre GI;"Plan2023 is reported; all other tools are pending."
+2.7;1;27;Pre GI;"Plan2022 and RA tools are reported; GI, Pledge, and Plan2023 tools are pending."
+2.5;1;28;Pre GI;"Pledge is reported; all other tools are pending."
+1.8;1;29;Pre GI;"Plan2022 is reported; all other tools are pending."
+0.9;1;30;Pre GI;"RA2022 is reported; all other tools are pending."
+0;0;31;No Report;None of the tools have started reporting yet.
