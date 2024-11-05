@@ -59,7 +59,7 @@ shapely==2.0.2
 six==1.16.0
 smmap==5.0.1
 statsmodels==0.14.0
-streamlit==1.27.2
+streamlit==1.39.0
 streamlit-carousel==0.0.4
 streamlit-folium==0.15.0
 tenacity==8.2.3
