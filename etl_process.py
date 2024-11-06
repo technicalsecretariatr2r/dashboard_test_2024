@@ -9,19 +9,19 @@ import io
 from io import BytesIO
 import plotly.express as px
 from datetime import datetime, timedelta
-
-import matplotlib
-import matplotlib.pyplot as plt
-import matplotlib.cm as cm
-
-from streamlit_folium import st_folium
-import folium
-import seaborn as sns
-from matplotlib.colors import LinearSegmentedColormap
-
-
-# import geopandas as gpd
 import requests
+
+# import matplotlib
+# import matplotlib.pyplot as plt
+# import matplotlib.cm as cm
+# from streamlit_folium import st_folium
+# import folium
+# import seaborn as sns
+# from matplotlib.colors import LinearSegmentedColormap
+# import geopandas as gpd
+
+
+
 
 # headers = {
 #     "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36"
@@ -59,8 +59,8 @@ file_path_data_plan_2022 = "data_plan_2022.csv"
 file_path_data_ra_2022 = "RA_24-02.csv" 
 file_path_campaign_index = "index_campaign.csv" 
 
-file_path_ac_atypes = "action_cluster_to_Action_Types.csv"
-file_path_ac_atypes_plan = "action_cluster_to_action_types_plan.csv"
+# file_path_ac_atypes = "action_cluster_to_Action_Types.csv"
+# file_path_ac_atypes_plan = "action_cluster_to_action_types_plan.csv"
 
 file_path_country_geo_info = "countries_geoinfo.csv"
 
@@ -167,13 +167,15 @@ df_2022_ra.columns = ['y' + str(col) for col in df_2022_ra.columns]
 df_partners_name = pd.read_csv(file_path_partner_list, sep=';') 
 #st.write(df_partners_name)
 
-### CSV Action Cluster & Action Types (General Information)
-ac_atypes = pd.read_csv(file_path_ac_atypes, sep=';') 
-#st.write(ac_atypes)
+# ### CSV Action Cluster & Action Types (General Information)
+# ac_atypes = pd.read_csv(file_path_ac_atypes, sep=';') 
+# #st.write(ac_atypes)
 
-### CSV Action Cluster & Action Types (plan)
-ac_atypes_plan = pd.read_csv(file_path_ac_atypes_plan, sep=';') 
-# st.write(ac_atypes_plan)
+# ### CSV Action Cluster & Action Types (plan)
+# ac_atypes_plan = pd.read_csv(file_path_ac_atypes_plan, sep=';') 
+# # st.write(ac_atypes_plan)
+
+
 
 ### CSV Country GeoInfo
 df_country = pd.read_csv(file_path_country_geo_info,sep=';')    
@@ -7787,7 +7789,6 @@ def df_to_partner_summary_dataexplorer():
     df_all_partners_summary = df_all_partners_summary.rename(columns=rename_list)
 
     return df_all_partners_summary
-
 df_all_partners_summary = df_to_partner_summary_dataexplorer()
 
 st.write(df_all_partners_summary)
