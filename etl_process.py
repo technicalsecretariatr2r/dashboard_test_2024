@@ -61,59 +61,10 @@ file_path_campaign_index = "index_campaign.csv"
 
 file_path_country_geo_info = "countries_geoinfo.csv"
 
-# file_path_gi = "GI_231208.csv"
-# file_path_pledge = "PLEDGE_231121.csv"
-# file_path_plan = "PLAN_240229.csv"
-
-# file_path_gi = "GI_240409.csv"
-# file_path_pledge = "PLEDGE_240409.csv"
-# file_path_plan = "PLAN_240409.csv"
-
-# file_path_gi = "GI_240416.csv"
-# file_path_pledge = "PLEDGE_240416.csv"
-# file_path_plan = "PLAN_240416.csv"
-
-# file_path_gi = "GI_240430.csv"
-# file_path_pledge = "PLEDGE_240430.csv"
-# file_path_plan = "PLAN_240430.csv"
-
-# file_path_gi = "GI_240503.csv"
-# file_path_pledge = "PLEDGE_240503.csv"
-# file_path_plan = "PLAN_240503.csv"
-
-# file_path_gi = "GI_240508.csv"
-# file_path_pledge = "PLEDGE_240508.csv"
-# file_path_plan = "PLAN_240508.csv"
-
-# file_path_gi = "GI_240514.csv"
-# file_path_pledge = "PLEDGE_240514.csv"
-# # file_path_plan = "PLAN_240514.csv"
-# file_path_plan = "PLAN_240521.csv"
-
-# file_path_gi = "GI_240814.csv"
-# file_path_pledge = "PLEDGE_240814.csv"
-# file_path_plan = "PLAN_240814.csv"
-
-# file_path_gi = "GI_240903.csv"
-# file_path_pledge = "PLEDGE_240903.csv"
-# file_path_plan = "PLAN_240903.csv"
-
-# file_path_gi = "GI_240905.csv"
-# file_path_pledge = "PLEDGE_240905.csv"
-# file_path_plan = "PLAN_240905.csv"
-
-
-# file_path_gi = "GI_240905.csv"
-# file_path_gi = "GI_241002.csv"
-# file_path_pledge = "PLEDGE_240905.csv"
-# file_path_pledge = "PLEDGE_241021.csv"
-# file_path_plan = "PLAN_240909.csv"
-# file_path_plan = "PLAN_241021.csv"
-
 
 file_path_gi = "GI_241029.csv"
 file_path_pledge = "PLEDGE_241029.csv"
-file_path_plan = "Plan_241029.csv"
+file_path_plan = "PLAN_241029.csv"
 
 
 
