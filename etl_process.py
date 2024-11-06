@@ -7793,7 +7793,7 @@ def df_to_partner_summary_dataexplorer():
     return df_all_partners_summary
 df_all_partners_summary = df_to_partner_summary_dataexplorer()
 
-st.write(df_all_partners_summary)
+# st.write(df_all_partners_summary)
 
 
 
