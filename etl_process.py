@@ -149,8 +149,8 @@ df_ind_countries_pledge_plan = pd.read_csv(file_path_countries_pledge_plan, sep=
 ### 2022 Plan INfo 
 df_2022_plan = pd.read_csv(file_path_data_plan_2022, sep=';', header=None).iloc[2:]
 df_2022_plan.columns = ['x' + str(col) for col in df_2022_plan.columns]
-# st.write("2022 Plan Info")
-# st.write(df_2022_plan)
+st.write("2022 Plan Info")
+st.write(df_2022_plan)
 
 ### 2022 Pledge Info
 df_2022_pledge = pd.read_csv(file_path_data_pledge_2022, sep=';') 
