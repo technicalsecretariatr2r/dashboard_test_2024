@@ -90,10 +90,6 @@ def load_data_geo_info():
     from etl_process import df_country 
     return df_country 
 
-@st.cache_data
-def load_data_cleaned_ac_atypes():
-    from etl_process import ac_atypes
-    return ac_atypes
 
 #Data Geo Country
 @st.cache_resource
@@ -209,7 +205,6 @@ df_partner_campaign_tracker = summary_partner_tracking_table()
 
 df_hazards_pledge_plan_vertical = load_data_df_hazards_pledge_plan_vertical()
 df_ind_countries_pledge_plan = load_data_cleaned_df_ind_countries_pledge_plan()
-ac_atypes = load_data_cleaned_ac_atypes()
 df_country =        load_data_geo_info()
 df_partners_name =  load_data_df_partners_name()
 
@@ -1477,7 +1472,8 @@ def campaign_overview_cop29():
             "this Data Explorer provides an overview of the progress achieved so far by these reporting partners. ")
 
     def metrics_members(n_member_gi_2024):  
-            st.metric("N° Members",numerize(int(n_member_gi_2024)))
+            # st.metric("N° Members",numerize(int(n_member_gi_2024)))
+            st.metric("N° Members",689,help = "This number is underreview")
     
     def metrics_goal(rtr_goal_individuals):  
             st.metric("Campaign Goal",numerize(int(rtr_goal_individuals)))
