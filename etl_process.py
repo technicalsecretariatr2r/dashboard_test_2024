@@ -167,23 +167,16 @@ df_2022_ra
 df_partners_name = pd.read_csv(file_path_partner_list, sep=';') 
 st.write(df_partners_name)
 
-# ### CSV Action Cluster & Action Types (General Information)
-# ac_atypes = pd.read_csv(file_path_ac_atypes, sep=';') 
-# #st.write(ac_atypes)
-
-# ### CSV Action Cluster & Action Types (plan)
-# ac_atypes_plan = pd.read_csv(file_path_ac_atypes_plan, sep=';') 
-# # st.write(ac_atypes_plan)
-
-
-
 ### CSV Country GeoInfo
 df_country = pd.read_csv(file_path_country_geo_info,sep=';')    
 # st.write(df_country)
 
 ### Index RtR Campaging_Different Stages of Partners
 df_index_rtrcampaign = pd.read_csv(file_path_campaign_index,sep=';')    
-# st.write(df_index_rtrcampaign)
+st.write(df_index_rtrcampaign)
+
+
+
 
 ### GENERAL INFORMATION SURVEY 2023
 # Extracting the date of the data
