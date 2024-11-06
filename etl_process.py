@@ -186,13 +186,13 @@ year = "20" + date_string_gi[:2]
 month = date_string_gi[2:4]
 day = date_string_gi[4:6]
 formatted_date_gi = f"{year}/{month}/{day}"
-# st.sidebar.markdown("General Information Survey, Update File: "+formatted_date_gi)
+st.sidebar.markdown("General Information Survey, Update File: "+formatted_date_gi)
 
 # CSV GIS File
 df_gi = pd.read_csv(filename_gi, sep=',', header=None).iloc[2:]
 df_gi.columns = ['q' + str(col) for col in df_gi.columns]
-#st.write("General Information Survey")
-#st.write(df_gi)
+st.write("General Information Survey")
+st.write(df_gi)
 
 ### PLEDGE STATEMENT SURVEY 2023
 # Extracting the date of the data
@@ -202,13 +202,13 @@ year = "20" + date_string_pledge[:2]
 month = date_string_pledge[2:4]
 day = date_string_pledge[4:6]
 formatted_date_pledge = f"{year}/{month}/{day}"
-# st.sidebar.markdown("Pledge Statement, Update File: "+formatted_date_pledge)
+st.sidebar.markdown("Pledge Statement, Update File: "+formatted_date_pledge)
 
 # CSV Pledge File
 df_pledge = pd.read_csv(filename_pledge, sep=',', header=None).iloc[2:]
 df_pledge.columns = ['s' + str(col) for col in df_pledge.columns]
-#st.write("Pledge Statement Survey")
-#st.write(df_pledge)
+st.write("Pledge Statement Survey")
+st.write(df_pledge)
 
 ### RESILIENCE-BUILDING PLAN SURVEY 2023
 # Extracting the date of the data
@@ -218,13 +218,13 @@ year = "20" + date_string_plan[:2]
 month = date_string_plan[2:4]
 day = date_string_plan[4:6]
 formatted_date_plan = f"{year}/{month}/{day}"
-# st.sidebar.markdown(f"Resilience Building Plan, Update File: {formatted_date_plan}")
+st.sidebar.markdown(f"Resilience Building Plan, Update File: {formatted_date_plan}")
 
 # CSV RESILIENCE-BUILIDING PLAN SURVEY 2023
 df_2023_plan = pd.read_csv(filename_plan, sep=',', header=None).iloc[2:]
 df_2023_plan.columns = ['r' + str(col) for col in df_2023_plan.columns]
-#st.write("Resilience Building Plan")
-#st.write(df_2023_plan)
+st.write("Resilience Building Plan")
+st.write(df_2023_plan)
 
 
 
