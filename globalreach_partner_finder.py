@@ -8,7 +8,6 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as mtick
 import seaborn as sns
 from streamlit_folium import st_folium
-from wordcloud import WordCloud, STOPWORDS
 import folium
 from PIL import Image
 from numerize.numerize import numerize

@@ -8,7 +8,6 @@ import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 import matplotlib.ticker as ticker
 from matplotlib.ticker import MaxNLocator
-# from wordcloud import WordCloud, STOPWORDS
 from streamlit_folium import st_folium
 import folium
 import plotly.graph_objects as go
