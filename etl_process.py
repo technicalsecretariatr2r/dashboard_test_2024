@@ -7867,7 +7867,7 @@ def download_all_tables_excel():
                     data=excel_data,
                     file_name=file_name,
                     mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
-download_all_tables_excel()
+# download_all_tables_excel()
 
 
 
