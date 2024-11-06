@@ -13,7 +13,6 @@ import matplotlib.ticker as ticker
 from matplotlib.ticker import MaxNLocator
 from matplotlib.ticker import ScalarFormatter
 from matplotlib.ticker import FuncFormatter
-# from wordcloud import WordCloud, STOPWORDS
 from streamlit_folium import st_folium
 import folium
 import plotly.graph_objects as go
@@ -95,11 +94,6 @@ def load_data_cleaned_df_gi_summary():
     return df_gi_summary
 
 
-@st.cache_data
-def load_data_cleaned_ac_atypes():
-    from etl_process import ac_atypes
-    return ac_atypes
-
 
 @st.cache_data
 def load_data_cleaned_df_partner_campaign():
@@ -175,7 +169,7 @@ df_to_find_partner = load_data_cleaned_df_to_find_partner()
 df_gi = load_data_cleaned_df_gi()
 df_gi_summary = load_data_cleaned_df_gi_summary()
 
-ac_atypes = load_data_cleaned_ac_atypes()
+
 df_solution_stories = load_data_cleaned_df_solution_stories()
 df_m_countries_vertical = load_data_cleaned_df_m_countries_vertical()
 
