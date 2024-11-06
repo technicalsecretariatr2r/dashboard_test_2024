@@ -59,7 +59,59 @@ file_path_data_plan_2022 = "data_plan_2022.csv"
 file_path_data_ra_2022 = "RA_24-02.csv" 
 file_path_campaign_index = "index_campaign.csv" 
 
+# file_path_ac_atypes = "action_cluster_to_Action_Types.csv"
+# file_path_ac_atypes_plan = "action_cluster_to_action_types_plan.csv"
+
 file_path_country_geo_info = "countries_geoinfo.csv"
+
+# file_path_gi = "GI_231208.csv"
+# file_path_pledge = "PLEDGE_231121.csv"
+# file_path_plan = "PLAN_240229.csv"
+
+# file_path_gi = "GI_240409.csv"
+# file_path_pledge = "PLEDGE_240409.csv"
+# file_path_plan = "PLAN_240409.csv"
+
+# file_path_gi = "GI_240416.csv"
+# file_path_pledge = "PLEDGE_240416.csv"
+# file_path_plan = "PLAN_240416.csv"
+
+# file_path_gi = "GI_240430.csv"
+# file_path_pledge = "PLEDGE_240430.csv"
+# file_path_plan = "PLAN_240430.csv"
+
+# file_path_gi = "GI_240503.csv"
+# file_path_pledge = "PLEDGE_240503.csv"
+# file_path_plan = "PLAN_240503.csv"
+
+# file_path_gi = "GI_240508.csv"
+# file_path_pledge = "PLEDGE_240508.csv"
+# file_path_plan = "PLAN_240508.csv"
+
+# file_path_gi = "GI_240514.csv"
+# file_path_pledge = "PLEDGE_240514.csv"
+# # file_path_plan = "PLAN_240514.csv"
+# file_path_plan = "PLAN_240521.csv"
+
+# file_path_gi = "GI_240814.csv"
+# file_path_pledge = "PLEDGE_240814.csv"
+# file_path_plan = "PLAN_240814.csv"
+
+# file_path_gi = "GI_240903.csv"
+# file_path_pledge = "PLEDGE_240903.csv"
+# file_path_plan = "PLAN_240903.csv"
+
+# file_path_gi = "GI_240905.csv"
+# file_path_pledge = "PLEDGE_240905.csv"
+# file_path_plan = "PLAN_240905.csv"
+
+
+# file_path_gi = "GI_240905.csv"
+# file_path_gi = "GI_241002.csv"
+# file_path_pledge = "PLEDGE_240905.csv"
+# file_path_pledge = "PLEDGE_241021.csv"
+# file_path_plan = "PLAN_240909.csv"
+# file_path_plan = "PLAN_241021.csv"
 
 
 file_path_gi = "GI_241029.csv"
@@ -97,23 +149,33 @@ df_ind_countries_pledge_plan = pd.read_csv(file_path_countries_pledge_plan, sep=
 ### 2022 Plan INfo 
 df_2022_plan = pd.read_csv(file_path_data_plan_2022, sep=';', header=None).iloc[2:]
 df_2022_plan.columns = ['x' + str(col) for col in df_2022_plan.columns]
-st.write("2022 Plan Info")
-st.write(df_2022_plan)
+# st.write("2022 Plan Info")
+# st.write(df_2022_plan)
 
 ### 2022 Pledge Info
 df_2022_pledge = pd.read_csv(file_path_data_pledge_2022, sep=';') 
-st.write(df_2022_pledge)
+#st.write(df_2022_pledge)
 
 ### 2022 RA Info
 df_2022_ra = pd.read_csv(file_path_data_ra_2022,sep=';', header=None).iloc[2:]
 df_2022_ra.columns = ['y' + str(col) for col in df_2022_ra.columns]
-df_2022_ra
+# df_2022_ra
 
 #Other Data Set
 # st.sidebar.markdown("# Last Updated Dates for Files")
 ### CSV Partner's Name File
 df_partners_name = pd.read_csv(file_path_partner_list, sep=';') 
-st.write(df_partners_name)
+#st.write(df_partners_name)
+
+# ### CSV Action Cluster & Action Types (General Information)
+# ac_atypes = pd.read_csv(file_path_ac_atypes, sep=';') 
+# #st.write(ac_atypes)
+
+# ### CSV Action Cluster & Action Types (plan)
+# ac_atypes_plan = pd.read_csv(file_path_ac_atypes_plan, sep=';') 
+# # st.write(ac_atypes_plan)
+
+
 
 ### CSV Country GeoInfo
 df_country = pd.read_csv(file_path_country_geo_info,sep=';')    
@@ -121,10 +183,7 @@ df_country = pd.read_csv(file_path_country_geo_info,sep=';')
 
 ### Index RtR Campaging_Different Stages of Partners
 df_index_rtrcampaign = pd.read_csv(file_path_campaign_index,sep=';')    
-st.write(df_index_rtrcampaign)
-
-
-
+# st.write(df_index_rtrcampaign)
 
 ### GENERAL INFORMATION SURVEY 2023
 # Extracting the date of the data
@@ -134,13 +193,13 @@ year = "20" + date_string_gi[:2]
 month = date_string_gi[2:4]
 day = date_string_gi[4:6]
 formatted_date_gi = f"{year}/{month}/{day}"
-st.sidebar.markdown("General Information Survey, Update File: "+formatted_date_gi)
+# st.sidebar.markdown("General Information Survey, Update File: "+formatted_date_gi)
 
 # CSV GIS File
 df_gi = pd.read_csv(filename_gi, sep=',', header=None).iloc[2:]
 df_gi.columns = ['q' + str(col) for col in df_gi.columns]
-st.write("General Information Survey")
-st.write(df_gi)
+#st.write("General Information Survey")
+#st.write(df_gi)
 
 ### PLEDGE STATEMENT SURVEY 2023
 # Extracting the date of the data
@@ -150,13 +209,14 @@ year = "20" + date_string_pledge[:2]
 month = date_string_pledge[2:4]
 day = date_string_pledge[4:6]
 formatted_date_pledge = f"{year}/{month}/{day}"
-st.sidebar.markdown("Pledge Statement, Update File: "+formatted_date_pledge)
+# st.sidebar.markdown("Pledge Statement, Update File: "+formatted_date_pledge)
 
 # CSV Pledge File
 df_pledge = pd.read_csv(filename_pledge, sep=',', header=None).iloc[2:]
 df_pledge.columns = ['s' + str(col) for col in df_pledge.columns]
-st.write("Pledge Statement Survey")
-st.write(df_pledge)
+#st.write("Pledge Statement Survey")
+#st.write(df_pledge)
+
 
 
 ### RESILIENCE-BUILDING PLAN SURVEY 2023
@@ -167,15 +227,13 @@ year = "20" + date_string_plan[:2]
 month = date_string_plan[2:4]
 day = date_string_plan[4:6]
 formatted_date_plan = f"{year}/{month}/{day}"
-st.sidebar.markdown(f"Resilience Building Plan, Update File: {formatted_date_plan}")
-st.write("test")
-
+# st.sidebar.markdown(f"Resilience Building Plan, Update File: {formatted_date_plan}")
 
 # CSV RESILIENCE-BUILIDING PLAN SURVEY 2023
 df_2023_plan = pd.read_csv(filename_plan, sep=',', header=None).iloc[2:]
 df_2023_plan.columns = ['r' + str(col) for col in df_2023_plan.columns]
-st.write("Resilience Building Plan")
-st.write(df_2023_plan)
+#st.write("Resilience Building Plan")
+#st.write(df_2023_plan)
 
 
 
