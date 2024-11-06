@@ -154,18 +154,18 @@ st.write(df_2022_plan)
 
 ### 2022 Pledge Info
 df_2022_pledge = pd.read_csv(file_path_data_pledge_2022, sep=';') 
-#st.write(df_2022_pledge)
+st.write(df_2022_pledge)
 
 ### 2022 RA Info
 df_2022_ra = pd.read_csv(file_path_data_ra_2022,sep=';', header=None).iloc[2:]
 df_2022_ra.columns = ['y' + str(col) for col in df_2022_ra.columns]
-# df_2022_ra
+df_2022_ra
 
 #Other Data Set
 # st.sidebar.markdown("# Last Updated Dates for Files")
 ### CSV Partner's Name File
 df_partners_name = pd.read_csv(file_path_partner_list, sep=';') 
-#st.write(df_partners_name)
+st.write(df_partners_name)
 
 # ### CSV Action Cluster & Action Types (General Information)
 # ac_atypes = pd.read_csv(file_path_ac_atypes, sep=';') 
