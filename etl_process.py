@@ -59,9 +59,6 @@ file_path_data_plan_2022 = "data_plan_2022.csv"
 file_path_data_ra_2022 = "RA_24-02.csv" 
 file_path_campaign_index = "index_campaign.csv" 
 
-# file_path_ac_atypes = "action_cluster_to_Action_Types.csv"
-# file_path_ac_atypes_plan = "action_cluster_to_action_types_plan.csv"
-
 file_path_country_geo_info = "countries_geoinfo.csv"
 
 # file_path_gi = "GI_231208.csv"
@@ -210,6 +207,7 @@ df_pledge.columns = ['s' + str(col) for col in df_pledge.columns]
 st.write("Pledge Statement Survey")
 st.write(df_pledge)
 
+
 ### RESILIENCE-BUILDING PLAN SURVEY 2023
 # Extracting the date of the data
 filename_plan = file_path_plan
@@ -219,6 +217,8 @@ month = date_string_plan[2:4]
 day = date_string_plan[4:6]
 formatted_date_plan = f"{year}/{month}/{day}"
 st.sidebar.markdown(f"Resilience Building Plan, Update File: {formatted_date_plan}")
+st.write("test")
+
 
 # CSV RESILIENCE-BUILIDING PLAN SURVEY 2023
 df_2023_plan = pd.read_csv(filename_plan, sep=',', header=None).iloc[2:]
