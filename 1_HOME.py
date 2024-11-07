@@ -37,7 +37,7 @@ from datetime import datetime
 
 
 def structure_and_format():
-    im = Image.open("R2R_RGB_PINK_BLUE.png")
+    im = Image.open("images/R2R_RGB_PINK_BLUE.png")
     st.set_page_config(page_title="RtR DATA EXPLORER", layout="wide", initial_sidebar_state="expanded")
     st.logo(im, size="large")
     
@@ -803,7 +803,7 @@ n_individuals_all_plans_n_partners = metrics['n_individuals_all_plans_n_partners
 
 ## Welcome
 def render_main_page(): 
-    logo_path = "logo_web.png"  # Adjust path if needed
+    logo_path = "images/logo_web.png"  # Adjust path if needed
 
     col1, col2 = st.columns([0.6, 5.4])  # Adjust the proportions as needed
 
@@ -874,31 +874,6 @@ def campaign_overview_cop29():
         the Race to Resilience (RtR) campaign aims to mobilize Non-Party Stakeholders with the ambitious goal of increasing 
         the resilience of 4 billion people by 2030. 
         """
-        
-        # Define links for the available reports
-        reports = {
-            "2022": "https://climatechampions.unfccc.int/wp-content/uploads/2022/09/Race-to-Zero-Race-to-Resilience-Progress-Report.pdf",
-            "2023": "https://climatechampions.unfccc.int/wp-content/uploads/2024/01/Race-to-Resilience-2023-Campaign-Progress-Report.pdf",
-            "2024": None  # Report not yet launched
-        }
-
-        
-        with col1:
-            st.markdown(long_description)
-        with col2:
-            st.write("")
-        with col3:
-            if st.button("Download 2023 RtR Report"):
-                st.markdown(f"[Click here to download]( {reports['2023']} )", unsafe_allow_html=True) 
-            # st.button("2024 Report (Coming Soon)", disabled=True)
-            if st.button("Download 2022 RtR Report"):
-                st.markdown(f"[Click here to download]( {reports['2022']} )", unsafe_allow_html=True)
-            
-            
-    
-            
-        
-  
 
     def intro_campaign_text_p1():
         long_description = f"""
@@ -910,7 +885,7 @@ def campaign_overview_cop29():
         st.markdown(long_description)
         
     def figure_metrics_framework_p1():
-        image_path = "increasingly_resilient_individuals.png" 
+        image_path = "images/increasingly_resilient_individuals.png" 
 
         # Display the image
         st.image(image_path, caption="Source: RtR Metrics Framework", use_column_width=True)
@@ -925,7 +900,7 @@ def campaign_overview_cop29():
         st.markdown(long_description, unsafe_allow_html=True)
     
     def figure_metrics_framework_p2():
-            image_path = "rtr_stages.png" 
+            image_path = "images/rtr_stages.png" 
             st.image(image_path, caption="Source: RtR Metrics Framework", use_column_width=True)
         
     def generate_long_description_p2_a(n_all_rtrpartners):

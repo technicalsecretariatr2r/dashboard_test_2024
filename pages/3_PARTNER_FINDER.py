@@ -32,8 +32,9 @@ from datetime import datetime
 
 ## WebStructure
 
+
 def structure_and_format():
-    im = Image.open("R2R_RGB_PINK_BLUE.png")
+    im = Image.open("images/R2R_RGB_PINK_BLUE.png")
     st.set_page_config(page_title="RtR DATA EXPLORER", layout="wide", initial_sidebar_state="expanded")
     st.logo(im, size="large")
     

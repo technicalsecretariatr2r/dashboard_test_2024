@@ -29,8 +29,10 @@ from datetime import datetime
 import pydeck as pdk
 
 
+
+
 def structure_and_format():
-    im = Image.open("R2R_RGB_PINK_BLUE.png")
+    im = Image.open("images/R2R_RGB_PINK_BLUE.png")
     st.set_page_config(page_title="RtR DATA EXPLORER", layout="wide", initial_sidebar_state="expanded")
     st.logo(im, size="large")
     
@@ -63,6 +65,7 @@ def structure_and_format():
     st.markdown(hide_table_row_index, unsafe_allow_html=True)
 
 structure_and_format()
+
 
 
 ##Uploading Data

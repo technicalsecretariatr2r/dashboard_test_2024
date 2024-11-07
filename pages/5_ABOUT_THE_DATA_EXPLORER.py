@@ -1,8 +1,10 @@
 from PIL import Image
 import streamlit as st
 
+
+
 def structure_and_format():
-    im = Image.open("R2R_RGB_PINK_BLUE.png")
+    im = Image.open("images/R2R_RGB_PINK_BLUE.png")
     st.set_page_config(page_title="RtR DATA EXPLORER", layout="wide", initial_sidebar_state="expanded")
     st.logo(im, size="large")
     
@@ -33,7 +35,9 @@ def structure_and_format():
     ## Inject CSS with Markdown
     ##
     st.markdown(hide_table_row_index, unsafe_allow_html=True)
+
 structure_and_format()
+
 
 ##MAIN SIDE
 st.markdown("# ABOUT THE RtR DATA EXPLORER")
