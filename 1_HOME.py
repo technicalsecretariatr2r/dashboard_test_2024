@@ -886,12 +886,10 @@ def campaign_overview_cop29():
         
     def figure_metrics_framework_p1():
         image_path = "images/increasingly_resilient_individuals.png" 
-        image_path_test = "images/gayo_logo.png" 
-
+       
         # Display the image
         st.image(image_path, caption="Source: RtR Metrics Framework", use_column_width=True)
         
-        st.image(image_path_test, caption="Source: RtR Metrics Framework", use_column_width=True)
           
     def intro_campaign_text_p2():
         long_description = """
