@@ -1481,7 +1481,10 @@ def campaign_overview_cop29():
     # n_plans_2024 = n_partners_plan
     # n_finance_plans_2024= dollars_mobilized_all_plans_n_partners 
     
-    
+    im_main_summary_img = Image.open("images/summary_rtr_cop.png")
+    col1, col2, col3 = st.columns([0.5,2,0.5])
+    with col2:
+        st.image(im_main_summary_img, use_column_width=True)
 
 
 
