@@ -38,8 +38,13 @@ from datetime import datetime
 
 def structure_and_format():
     im = Image.open("images/R2R_RGB_PINK_BLUE.png")
+    
+    
     st.set_page_config(page_title="RtR DATA EXPLORER", layout="wide", initial_sidebar_state="expanded")
+    
+    
     st.logo(im, size="large")
+
     
     css_path = "style.css"
 
@@ -874,6 +879,7 @@ def campaign_overview_cop29():
         the Race to Resilience (RtR) campaign aims to mobilize Non-Party Stakeholders with the ambitious goal of increasing 
         the resilience of 4 billion people by 2030. 
         """
+        st.write(long_description)
 
     def intro_campaign_text_p1():
         long_description = f"""
