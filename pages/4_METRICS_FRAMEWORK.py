@@ -73,7 +73,7 @@ structure_and_format()
 st.markdown('# RtR METRICS FRAMEWORK')
 
 
-image_path = 'metric_framework_foto.png'
+image_path = 'images/metric_framework_foto.png'
 
 # Display the image in Streamlit
 
