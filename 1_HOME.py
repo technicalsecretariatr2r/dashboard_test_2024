@@ -37,14 +37,8 @@ from datetime import datetime
 
 def structure_and_format():
     im = Image.open("images/R2R_RGB_PINK_BLUE.png")
-    
-    
     st.set_page_config(page_title="RtR DATA EXPLORER", layout="wide", initial_sidebar_state="expanded")
-    
-    
     st.logo(im, size="large")
-
-    
     css_path = "style.css"
 
     with open(css_path) as css:
@@ -1016,11 +1010,6 @@ def campaign_overview_cop29():
             "2023": "images/rtr_progress_report_2023.png",
             "2024": "images/rtr_progress_report_2024.png",
         }
-
-        # st.markdown("<h2 style='text-align: center; color: #FF37D5;'>Race to Resilience Progress Reports</h2>", unsafe_allow_html=True)
-
-        # Define a function to display report download button, image, and link
-        # Define a function to display the report download button and image
         def display_report(year, img_width=400):
             # Display the image without caption
             st.image(images_path[year], use_column_width=True)
@@ -1067,27 +1056,30 @@ def campaign_overview_cop29():
                 </button>
             </div>
             """
-            st.markdown(button_html, unsafe_allow_html=True)
-            
-              
-        col1, col2, col3, col4, col5 = st.columns([3,0.2,0.7,0.7,0.7])
-        with col1:
-                st.write("")
+            st.markdown(button_html, unsafe_allow_html=True)  
+        
+        # Define the tabs
+        tab1, tab2 = st.tabs(["Campaign Evolution", "Progress Reports"])
+
+        with tab1:
+            st.write("")
+            col1, col2, col3 = st.columns([0.4,2.2,0.4])
+            with col2:
                 st.image(images_path["summary"], use_column_width=True)
-                
-        with col2:
-                st.write("")
-                
-        with col3:
+
+        with tab2:
+            col1, col2, col3, col4, col5 = st.columns([0.7,1.2,1.2,1.2,0.7])
+            with col2: 
                 display_report("2022", img_width=500)
-        with col4:
+            with col3: 
                 display_report("2023", img_width=500)
-                
-        with col5:
+            with col4: 
                 display_report_not_yet("2024", img_width=500)
-                
-    
-    
+
+       
+        
+            
+            
     #CHARTS
     ## CHART NUMBER OF PEOPLE [METRICS]
     def plot_num_people_chart(n_individuals_pledge_in_2022, n_individuals_pledge_in_2023, n_individuals_pledge_in_2024,
@@ -1643,8 +1635,10 @@ def campaign_overview_cop29():
             hide_index=True
         )
         
-        st.markdown("<h6 style='color:#FF37D5;'>Use the Partner Finder to explore RtR partners' pledges and plans in greater detail</h6>", unsafe_allow_html=True)
-
+        st.markdown("""
+    <a href="/PARTNER_FINDER" target="_self" style="font-weight: bold;">Use the Partner Finder to explore RtR partners' pledges and plans in greater detail</a>
+""", unsafe_allow_html=True)
+        
     with tab2:
         st.dataframe(df_regions4,hide_index=True
         )

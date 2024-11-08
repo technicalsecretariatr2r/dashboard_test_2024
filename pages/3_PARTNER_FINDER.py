@@ -31,8 +31,6 @@ from datetime import datetime
 
 
 ## WebStructure
-
-
 def structure_and_format():
     im = Image.open("images/R2R_RGB_PINK_BLUE.png")
     st.set_page_config(page_title="RtR DATA EXPLORER", layout="wide", initial_sidebar_state="expanded")
@@ -68,8 +66,6 @@ def structure_and_format():
 structure_and_format()
 
 
-
-
 ## Welcome Partner finder
 def render_main_page_partner_finder(): 
     logo_path = "images/rtr_partner_finder_banner.png"  
@@ -77,10 +73,7 @@ def render_main_page_partner_finder():
     col1, col2, col3 = st.columns([2,0.5,0.5])
     with col1: 
         st.image(logo_path) 
-
 render_main_page_partner_finder()
-
-
 
 
 
@@ -106,8 +99,6 @@ def load_data_cleaned_df_gi_summary():
     from etl_process import df_gi_summary
     return df_gi_summary
 
-
-
 @st.cache_data
 def load_data_cleaned_df_partner_campaign():
     from etl_process import df_partner_campaign
@@ -117,10 +108,6 @@ def load_data_cleaned_df_partner_campaign():
 def load_data_df_partners_name():
     from etl_process import df_partners_name
     return df_partners_name
-
-
-
-
 
 @st.cache_data 
 def load_data_df_hazards_pledge_plan_vertical():
@@ -480,7 +467,7 @@ df_filtered = df_to_find_partner.iloc[final_list].reset_index(drop=True).sort_va
 from selection_all import selection_all
 
 list_partners = df_filtered.InitName.unique()
-count_partners = str(df_filtered['InitName'].count()-1)
+count_partners = str(df_filtered['InitName'].count())
 markdown_list = '\n'.join(['* ' + item for item in list_partners])
 
 if selection == selection_all:
@@ -588,7 +575,7 @@ options = sorted(options, key=custom_sort_key)
 # st.markdown("## SELECT A PARTNER")
 partner = st.selectbox(
     "Select a RtR Partner:",
-    options=options, help ="All RtR partners are available for selection and exploration")
+    options=options, help ="Select a RtR Partner")
 
 df_partners_name = df_partners_name.query('InitName == @partner')
 df_gi_select_filtered = df_gi.query('InitName == @partner')

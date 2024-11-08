@@ -82,7 +82,7 @@ else:
 # Display each document's information in columns
 for index, row in filtered_df.iterrows():
     # Create columns for layout
-    col1, col2 = st.columns([0.5, 1.5])
+    col1, col2 = st.columns([0.3, 1.7])
     
     with col1:
         # Display the image if it exists

@@ -60,8 +60,15 @@ def governance_rtr():
    
     st.markdown("""
         ##### GOVERNANCE SETUP
-        The governance structure of the Campaign aims to ensure the achievement of its goals. RtR has three advisory bodies: the Technical Secretariat (TS), the Expert Review Group (ERG), and the Methodological Advisory Group (MAG). The TS, hosted by the <a style="font-weight:bold" href="https://www.cr2.cl/">Center for Climate and Resilience Research (CR)2</a> of the University of Chile, is an academic entity that offers technical support to the Campaign and is responsible for upholding the credibility, transparency, and robustness of the RtR and oversees the MAG and ERG. The TS includes scientists who are leading academic authors and contribute to the Intergovernmental Panel on Climate Change (IPCC). The MAG (18 members) helps improve and validate the RtR framework and metrics. The ERG (14 members) is set up to peer-review applications of candidates applying to join the RtR.
-        """, unsafe_allow_html=True)
+Our governance framework is meticulously structured to enhance the campaign's objectives and ensure effective oversight. The RtR is coordinated by the Technical Secretariat (TS) and supported by an integrated Advisory Body, which includes the Methodological Advisory Group (MAG) and the Expert Review Group (ERG).
+
+The Technical Secretariat, based at the Center for Climate and Resilience Research (CR2) of the University of Chile, is tasked with providing technical support and maintaining the integrity, transparency, and robustness of the campaign's operations. Comprising esteemed scientists who contribute to the Intergovernmental Panel on Climate Change (IPCC), the TS plays a pivotal role in upholding the scientific standards of our metrics and frameworks.
+
+Our Advisory Body, which combines the expertise of the MAG and ERG, is crucial in shaping and refining the metrics used in our campaign. The MAG, with its 12 members, focuses on the continuous improvement and validation of our methodologies and metrics, ensuring they are robust and applicable across diverse contexts. The ERG, consisting of 9 members, is responsible for peer-reviewing applications from potential campaign participants, guaranteeing a thorough and equitable evaluation process.
+
+Together, these entities ensure that the Race to Resilience remains a scientifically grounded and transparent initiative, driving meaningful change in communities vulnerable to climate impacts.
+
+  """, unsafe_allow_html=True)
     
 
     image_path = "images/rtr_governance_figure.png"
@@ -76,41 +83,42 @@ def governance_rtr():
         
         # Technical Secretariat (TS) Members
         with tab1:
-            st.markdown("""
-                ###### Technical Secretariat (TS)
-                - Marco Billi
-                - Roxana Bórquez
-                - Francis Mason
-                - Paulina Aldunce
-                - Nicolle Aspee
-                - Priscilla Berríos
-                - Marcela Cuevas
-                - Juan Carlos Varela
-            """)
+           st.markdown("""
+##### Strategic Team
+- Marco Billi, *Technical Lead* - [marcobilli@climatechampions.team](mailto:marcobilli@climatechampions.team)
+- Laura Ramajo Gallardo, *Project Manager and Resilience Research Lead* - [lauraramajo@climatechampions.team](mailto:lauraramajo@climatechampions.team)
+
+##### Metrics Team
+- Francis Mason, *Data Officer* - [francismason@climatechampions.team](mailto:francismason@climatechampions.team)
+- Juan Carlos Varela, *Metrics Officer* - [juan.varela@climatechampions.team](mailto:juan.varela@climatechampions.team)
+- María Paz Cárdenas B, *Metrics Analyst* - [maria.cardenas@ug.uchile.cl](mailto:maria.cardenas@ug.uchile.cl)
+
+##### Partner Alignment Team
+- Nicolle Aspee, *Partner Alignment Lead* - [nicolleaspee@climatechampions.team](mailto:nicolleaspee@climatechampions.team)
+- Marcela Cuevas, *Partner Alignment Analyst and Assistant* - [marcelacuevas@climatechampions.team](mailto:marcelacuevas@climatechampions.team)
+""")
 
         # Methodological Advisory Group (MAG) Members
         with tab2:
             st.markdown("""
-                ###### Methodological Advisory Group (MAG)
-                - Emilie Beauchamp (MAG Co-Lead)
-                - Ana María Loboguerrero (MAG Co-Lead)
-                - Anand Patwardhan (MAG Co-Lead)
-                - Md Nurul Alam
-                - Tariq Al-Olaimy
-                - Pilar Bueno
-                - Ankan De
-                - Portia Hunt
-                - Jia Li
-                - Jennifer Shaw
-                - Shehnaaz Moosa
-                - André Nahur
-                - Marta Olazabal
-                - Revathi Sharma
-                - Karl Schultz
-                - Chiara Trabacchi
-                - Kay Tuschen
-                - Patricia Villarroel
-            """)
+#### Methodological Advisory Group (MAG)
+
+##### MAG Co-Leads
+- Emilie Beauchamp - [ebeauchamp@iisd.org](mailto:ebeauchamp@iisd.org)
+- Ana Maria Loboguerrero - [a.m.loboguerrero@cgiar.org](mailto:a.m.loboguerrero@cgiar.org)
+- Anand Patwardhan - [apat@umd.edu](mailto:apat@umd.edu)
+
+##### MAG Members 
+- Md Nurul Alam - [na.sumon@yahoo.com](mailto:na.sumon@yahoo.com)
+- Tariq Al-Olaimy - [tariq@3blassociates.com](mailto:tariq@3blassociates.com)
+- Jia Li - [jli21@worldbank.org](mailto:jli21@worldbank.org)
+- Jennifer Shaw - [jennifer.Shaw@fcdo.gov.uk](mailto:jennifer.Shaw@fcdo.gov.uk)
+- Shehnaaz Moosa - [shehnaaz@southsouthnorth.org](mailto:shehnaaz@southsouthnorth.org)
+- Marta Olazabal - [marta.olazabal@bc3research.org](mailto:marta.olazabal@bc3research.org)
+- Revathi Sharma - [revathiskollegala@gmail.com](mailto:revathiskollegala@gmail.com)
+- Karl Schultz - [ipamtools@aaainitiative.org](mailto:ipamtools@aaainitiative.org)
+- Patricia Villarroel - [patricia.villarroel.s@mail.pucv.cl](mailto:patricia.villarroel.s@mail.pucv.cl)
+""")
 
         # Expert Review Group (ERG) Members
         with tab3:
