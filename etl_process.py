@@ -49,6 +49,10 @@ import requests
 #__________________________________________________________________________________________________________________________________________________________________
 
 #File Paths
+
+file_path_regions_regionadapt_list = "df_regions_regionadapt.csv"
+
+
 file_path_partner_list = "RtR_Partner_List.csv"
 file_path_countries_pledge_plan = "pledge_plan_for _country_20231121.csv"
 file_path_solution_stories = "solution_stories_rtr_231201.csv"
@@ -134,6 +138,11 @@ file_path_plan = "PLAN_241029.csv"
 #__________________________________________________________________________________________________________________________________________________________________
 #__________________________________________________________________________________________________________________________________________________________________
 #__________________________________________________________________________________________________________________________________________________________________
+
+#Load Region4
+df_regions4 = pd.read_csv(file_path_regions_regionadapt_list, sep=';') 
+# st.write("df_regions4",df_regions4)
+
 
 ## Load evaluation of responses files
 df_responses_evaluated = pd.read_csv(file_path_responses_evaluated, sep=';') 
@@ -285,9 +294,6 @@ def clean_text(text):
 ######____________________________________________
 
 
-
-#####___________________________________________________________________________
-#####___________________________________________________________________________
 #####___________________________________________________________________________
 #####___________________________________________________________________________
 #####___________________________________________________________________________
@@ -7731,6 +7737,7 @@ def df_to_partner_summary_dataexplorer():
     # df_to_find_gi = df_gi[['InitName','Org_Type','description_general','website','n_members_official','saa_p_systems_gi_concat']]
     df_to_find_gi = df_gi[['InitName','Org_Type','description_general','website','saa_p_systems_gi_concat']]
     df_to_find_pledge_individuals = df_pledge[['InitName','p_benefic_pledge_concat','individuals_n_total_pledge_2023']]
+    
     df_to_find_plan_individuals = df_2023_plan_summary_by_partner[['InitName','individuals_n_total_all_plans_2023_sum','number_of_plans','all_plans_name',]]
     df_to_find_pledge_nat_systems = df_pledge[['InitName','natsyst_n_hect_pledge_2023']]
     df_to_find_plan_nat_systems = df_2023_plan_summary_by_partner[['InitName','natsyst_n_hect_all_plans_2023_sum','money_expected_mobilized_sum']]
@@ -7743,6 +7750,32 @@ def df_to_partner_summary_dataexplorer():
     
     df_to_find_partner = pd.merge(df_to_find_partner,df_to_find_countries, on='InitName', how='outer')
     df_all_partners_summary = pd.merge(df_to_find_partner, df_partners_name[['InitName',]], on='InitName', how='inner')
+        
+    order_table_partner_summary = [
+        'InitName',
+        'Org_Type',
+        'description_general',
+        'website',
+        'saa_p_systems_gi_concat',
+        'country_region_all',
+        'country_subregion_all',
+        'all_countries',
+        'p_benefic_pledge_concat',
+        'individuals_n_total_pledge_2023',
+        'individuals_n_total_all_plans_2023_sum',
+        'number_of_plans',
+        'all_plans_name',
+        'natsyst_n_hect_pledge_2023',
+        'natsyst_n_hect_all_plans_2023_sum',
+        'money_expected_mobilized_sum',
+        ]
+    df_all_partners_summary = df_all_partners_summary[order_table_partner_summary]
+    
+    df_all_partners_summary = df_all_partners_summary.sort_values(by=['Org_Type','InitName'])
+
+
+    
+    # st.write("df_all_partners_summary",df_all_partners_summary)
     
     #CLEANING TEXT
     def replace_semicolon_in_dataframe(df):
@@ -7792,29 +7825,6 @@ def df_to_partner_summary_dataexplorer():
 
     return df_all_partners_summary
 df_all_partners_summary = df_to_partner_summary_dataexplorer()
-
-# st.write(df_all_partners_summary)
-
-
-
-# col1, col2, col3 = st.columns(3)
-
-# with col1:
-#     st.write("GI")
-#     df_gi.columns
-
-# with col2:
-#     st.write("PLEDGE")
-#     df_pledge_summary.columns
-
-# with col3:
-#     st.write("PLAN")
-#     df_2023_plan_summary_by_partner.columns
-
-# st.write("SUMMARY")
-# st.table(df_all_partners_summary)
-
-# # df_all_partners_summary.columns
 
 
 

@@ -11,7 +11,6 @@ import matplotlib.ticker as ticker
 from matplotlib.ticker import MaxNLocator
 from matplotlib.ticker import ScalarFormatter
 from matplotlib.ticker import FuncFormatter
-# from wordcloud import WordCloud, STOPWORDS
 from streamlit_folium import st_folium
 import folium
 import plotly.graph_objects as go
@@ -77,11 +76,63 @@ def structure_and_format():
 structure_and_format()
 
 
-#__________________________________________________________________________________________________________________________________________________________________
-#__________________________________________________________________________________________________________________________________________________________________
-# Export Data & Filtering to only Partners*
-#__________________________________________________________________________________________________________________________________________________________________
-#__________________________________________________________________________________________________________________________________________________________________
+
+## Welcome
+def render_main_page(): 
+    logo_path = "images/rtrdataexplorer_logo_grande.png"  # Adjust path if needed
+
+    col1, col2, col3 = st.columns([2,0.5,0.5])
+    
+    with col1: 
+        st.image(logo_path) 
+    
+    def welcome():
+        st.markdown("""
+                    **Welcome to the RtR Data Explorer**. A data exploration app for the <a style="font-weight:bold" href="https://racetozero.unfccc.int/system/racetoresilience/">Race to Resilience Campaign (RtR)</a>. 
+             
+                """, unsafe_allow_html=True)
+        
+        # st.markdown("""
+        #             **Welcome to the RtR Data Explorer**. A web application designed to support the <a style="font-weight:bold" href="https://racetozero.unfccc.int/system/racetoresilience/">Race to Resilience Campaign (RtR)</a>. 
+        #         """, unsafe_allow_html=True)
+    welcome()
+   
+
+    def instructions():
+        st.markdown("##### HOW TO USE")
+        st.markdown("""
+                    Begin by accessing the sidebar to choose from the RtR Data Explorer Features. The main page will then refresh to display content tailored to your settings, including interactive charts and maps. Delve into datasets, gain insights from the 'Metrics Framework', and read 'Solution Stories' for an overview of partners' experiences within the Race to Resilience Campaign.
+                    """)
+        
+        with st.expander("Read detailed instructions here"):
+            st.markdown("""
+                ###### HOW TO USE THE RtR DATA EXPLORER
+
+                **1. Navigation:** Use the sidebar to navigate the app. It is your primary tool for setting your exploration parameters.
+
+                **2. Selecting Options:** Adjust the filters to tailor the data displayed on the main page.
+
+                **3. Interacting with Main Page Content:** Charts and maps will update based on your selections. Hover or click on visualizations for detailed information.
+
+                **4. Exploring Datasets:** Some elements of the main page allow interactive data exploration.
+
+                **5. Understanding Key Concepts:** Visit the 'Metrics Framework' section for key concepts and methodologies.
+
+                **6. Read Solution Stories:** Access case studies of partners working on resilience-building efforts.
+                """)
+    # instructions()
+    
+    def governance():
+        st.markdown("##### GOVERNANCE SETUP")
+        st.markdown("""
+                    The governance setup of the Campaign includes three advisory bodies: the Technical Secretariat (TS), the Expert Review Group (ERG), and the Methodological Advisory Group (MAG).
+                    The TS is hosted by the <a style="font-weight:bold" href="https://www.cr2.cl/">Center for Climate and Resilience Research (CR)2</a> at the University of Chile, and the other advisory bodies include experts and scientists involved in peer-reviewing applications and improving the RtR framework.
+                    """, unsafe_allow_html=True)
+    # governance()
+render_main_page()
+
+
+
 
 
 #ADMINISTRATIVE
@@ -94,6 +145,12 @@ def load_data_df_partners_name():
 def load_data_geo_info():
     from etl_process import df_country 
     return df_country 
+
+
+@st.cache_data
+def load_data_regionsadapt():
+    from etl_process import df_regions4 
+    return df_regions4 
 
 
 #Data Geo Country
@@ -229,6 +286,9 @@ formatted_date_plan = load_data_cleaned_formatted_date_gi()
 df_gaps_all =  load_data_gaps()
 df_pledge_summary_no_filtered = load_df_pledge_summary_no_filtered()
 df_2022_plan = load_data_plan_2022()
+
+df_regions4 = load_data_regionsadapt()
+
 
 
 
@@ -806,72 +866,11 @@ n_individuals_all_plans_n_partners = metrics['n_individuals_all_plans_n_partners
 #         unsafe_allow_html=True,) 
 # rtr_data_explorer_setup()
 
-## Welcome
-def render_main_page(): 
-    logo_path = "images/logo_web.png"  # Adjust path if needed
-
-    col1, col2 = st.columns([0.6, 5.4])  # Adjust the proportions as needed
-
-    with col1:
-        st.image(logo_path, width=100)  # Adjust width if necessary
-
-    with col2:
-        st.markdown("## DATA EXPLORER")  # Adjust text size with markdown headers if needed
-        
-    
-    
-    def welcome():
-        st.markdown("""
-                    **Welcome to the RtR Data Explorer**. A data exploration app for the <a style="font-weight:bold" href="https://racetozero.unfccc.int/system/racetoresilience/">Race to Resilience Campaign (RtR)</a>. 
-             
-                """, unsafe_allow_html=True)
-        
-        # st.markdown("""
-        #             **Welcome to the RtR Data Explorer**. A web application designed to support the <a style="font-weight:bold" href="https://racetozero.unfccc.int/system/racetoresilience/">Race to Resilience Campaign (RtR)</a>. 
-        #         """, unsafe_allow_html=True)
-    welcome()
-   
-
-    def instructions():
-        st.markdown("##### HOW TO USE")
-        st.markdown("""
-                    Begin by accessing the sidebar to choose from the RtR Data Explorer Features. The main page will then refresh to display content tailored to your settings, including interactive charts and maps. Delve into datasets, gain insights from the 'Metrics Framework', and read 'Solution Stories' for an overview of partners' experiences within the Race to Resilience Campaign.
-                    """)
-        
-        with st.expander("Read detailed instructions here"):
-            st.markdown("""
-                ###### HOW TO USE THE RtR DATA EXPLORER
-
-                **1. Navigation:** Use the sidebar to navigate the app. It is your primary tool for setting your exploration parameters.
-
-                **2. Selecting Options:** Adjust the filters to tailor the data displayed on the main page.
-
-                **3. Interacting with Main Page Content:** Charts and maps will update based on your selections. Hover or click on visualizations for detailed information.
-
-                **4. Exploring Datasets:** Some elements of the main page allow interactive data exploration.
-
-                **5. Understanding Key Concepts:** Visit the 'Metrics Framework' section for key concepts and methodologies.
-
-                **6. Read Solution Stories:** Access case studies of partners working on resilience-building efforts.
-                """)
-    # instructions()
-    
-    def governance():
-        st.markdown("##### GOVERNANCE SETUP")
-        st.markdown("""
-                    The governance setup of the Campaign includes three advisory bodies: the Technical Secretariat (TS), the Expert Review Group (ERG), and the Methodological Advisory Group (MAG).
-                    The TS is hosted by the <a style="font-weight:bold" href="https://www.cr2.cl/">Center for Climate and Resilience Research (CR)2</a> at the University of Chile, and the other advisory bodies include experts and scientists involved in peer-reviewing applications and improving the RtR framework.
-                    """, unsafe_allow_html=True)
-    # governance()
-# render_main_page()
-
-
 
 ## Campaign Overview
 def campaign_overview_cop29():
     
     ## TEXT
-
     def intro_campaign_text_p0():
         col1, col2,col3 = st.columns([1.45,0.05,0.5])
         long_description = f"""
@@ -889,13 +888,6 @@ def campaign_overview_cop29():
         at the forefront of the global climate action agenda.
         """
         st.markdown(long_description)
-        
-    def figure_metrics_framework_p1():
-        image_path = "images/increasingly_resilient_individuals.png" 
-       
-        # Display the image
-        st.image(image_path, caption="Source: RtR Metrics Framework", use_column_width=True)
-        
           
     def intro_campaign_text_p2():
         long_description = """
@@ -906,10 +898,6 @@ def campaign_overview_cop29():
         """
         st.markdown(long_description, unsafe_allow_html=True)
     
-    def figure_metrics_framework_p2():
-            image_path = "images/rtr_stages.png" 
-            st.image(image_path, caption="Source: RtR Metrics Framework", use_column_width=True)
-        
     def generate_long_description_p2_a(n_all_rtrpartners):
         
         long_description = f"""
@@ -1002,8 +990,104 @@ def campaign_overview_cop29():
         </div>
         """, 
         unsafe_allow_html=True)
+  
+    #IMAGES
+    
+    def figure_metrics_framework_p2():
+            image_path = "images/rtr_stages.png" 
+            st.image(image_path, caption="Source: RtR Metrics Framework", use_column_width=True)
+    
+    def figure_metrics_framework_p1():
+        image_path = "images/increasingly_resilient_individuals.png" 
+       
+        # Display the image
+        st.image(image_path, caption="Source: RtR Metrics Framework", use_column_width=True)
+        
+    def images_progress_reports():
+        reports_url = {
+            "2022": "https://climatechampions.unfccc.int/wp-content/uploads/2022/09/Race-to-Zero-Race-to-Resilience-Progress-Report.pdf",
+            "2023": "https://climatechampions.unfccc.int/wp-content/uploads/2024/01/Race-to-Resilience-2023-Campaign-Progress-Report.pdf",
+            "2024": "https://climatechampions.unfccc.int/wp-content/uploads/2024/01/Race-to-Resilience-2023-Campaign-Progress-Report.pdf", 
+        }
 
+        images_path = {
+            "summary":"images/summary_rtr_cop.png",
+            "2022": "images/rtr_progress_report_2022.png",
+            "2023": "images/rtr_progress_report_2023.png",
+            "2024": "images/rtr_progress_report_2024.png",
+        }
 
+        # st.markdown("<h2 style='text-align: center; color: #FF37D5;'>Race to Resilience Progress Reports</h2>", unsafe_allow_html=True)
+
+        # Define a function to display report download button, image, and link
+        # Define a function to display the report download button and image
+        def display_report(year, img_width=400):
+            # Display the image without caption
+            st.image(images_path[year], use_column_width=True)
+            
+            # Create a download button with centered text using custom CSS
+            button_html = f"""
+            <div style="display: flex; justify-content: center; margin-top: 10px;">
+                <a href="{reports_url[year]}" target="_blank" style="
+                    background-color: #FF37D5;
+                    color: white;
+                    font-weight: bold;
+                    padding: 10px 20px;
+                    border-radius: 5px;
+                    text-decoration: none;
+                    text-align: center;
+                    display: inline-block;
+                    width: 200px;">
+                    Download {year} Report
+                </a>
+            </div>
+            """
+        
+            # Display the HTML button
+            st.markdown(button_html, unsafe_allow_html=True)
+            
+        def display_report_not_yet(year, img_width=400):
+              # Display the image without caption
+            st.image(images_path[year], use_column_width=True)
+            
+            # Button HTML for "Coming Soon" message
+            button_html = f"""
+            <div style="display: flex; justify-content: center; margin-top: 10px;">
+                <button onclick="alert('Coming soon! Stay tuned for the {year} report.')" style="
+                    background-color: #FF37D5;
+                    color: white;
+                    font-weight: bold;
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    text-align: center;
+                    width: 200px;">
+                    Coming Soon: {year} Report
+                </button>
+            </div>
+            """
+            st.markdown(button_html, unsafe_allow_html=True)
+            
+              
+        col1, col2, col3, col4, col5 = st.columns([3,0.2,0.7,0.7,0.7])
+        with col1:
+                st.write("")
+                st.image(images_path["summary"], use_column_width=True)
+                
+        with col2:
+                st.write("")
+                
+        with col3:
+                display_report("2022", img_width=500)
+        with col4:
+                display_report("2023", img_width=500)
+                
+        with col5:
+                display_report_not_yet("2024", img_width=500)
+                
+    
+    
     #CHARTS
     ## CHART NUMBER OF PEOPLE [METRICS]
     def plot_num_people_chart(n_individuals_pledge_in_2022, n_individuals_pledge_in_2023, n_individuals_pledge_in_2024,
@@ -1472,26 +1556,14 @@ def campaign_overview_cop29():
         dollars_mobilized_all_plans_n_partners = get_integer(dollars_mobilized_all_plans_n_partners)   
         st.metric("USD Planned",numerize(int(dollars_movilized_all_plans)),help = "Out of "+str(numerize(int(dollars_mobilized_all_plans_n_partners)))+" Partners ("+str(numerize(int(dollars_mobilized_all_plans_n_plans))+" plans)"))
 
+
     ## DISPLAY
     intro_campaign_text_p0()
-    
-    
-    # n_gi_2024 = n_partner_gi  
-    # n_pledge_2024 = n_partner_pledge 
-    # n_plans_2024 = n_partners_plan
-    # n_finance_plans_2024= dollars_mobilized_all_plans_n_partners 
-    
-    im_main_summary_img = Image.open("images/summary_rtr_cop.png")
-    col1, col2, col3 = st.columns([0.5,2,0.5])
-    with col2:
-        st.image(im_main_summary_img, use_column_width=True)
-
-
-
-
+    images_progress_reports()
     
     
     
+       
     
     
     with st.expander("Discover more about our approach to achieving this goal"):
@@ -1554,40 +1626,43 @@ def campaign_overview_cop29():
             
         with col7:
             st.metric("N° Partners Proceed (Pilot)",6)
-            
-            
-        
     
-    
-    
-            
-        tab1, tab2 = st.tabs(["List of RtR Partners", "RtR Partners (2022-2024)"])
-
-        with tab1:
-            st.dataframe(
-                df_all_partners_summary,
-                column_config={
-                    "Website": st.column_config.LinkColumn("Website"),
-                },
-                hide_index=True
-            )
-            st.markdown("<h6 style='color:#FF37D5;'>Use the Partner Finder to explore RtR partners' pledges and plans in greater detail</h4>", unsafe_allow_html=True)
-
-
-        with tab2:
-            col1, col2, col3 = st.columns([0.5,2,0.5])
-            
-            with col2: 
-                st.markdown("The number of RtR partners has increased each year.")
-                display_reporting_status(
-                    n_all_rtrpartners, n_reporting_partners, n_newpartners, n_rtrmember_exp,
-                    n_all_rtrpartners_cop28, reporting_partners_in_2023_cop28, no_reporting_partner_2023_cop28, n_rtrmember_exp_in_2023_cop28,
-                    n_all_rtrpartners_2022_cop27, reporting_partners_in_2022_cop27, no_reporting_partners_in_2022_cop27, n_rtrmember_exp_in_2022_cop27
-                )        
-    description_metric(df_all_partners_summary,n_all_rtrpartners, n_reporting_partners, n_newpartners, n_rtrmember_exp,
+    description_metric(df_all_partners_summary, n_all_rtrpartners, n_reporting_partners, n_newpartners, n_rtrmember_exp,
                                 n_all_rtrpartners_cop28, reporting_partners_in_2023_cop28, no_reporting_partner_2023_cop28, n_rtrmember_exp_in_2023_cop28,
                                 n_all_rtrpartners_2022_cop27, reporting_partners_in_2022_cop27, no_reporting_partners_in_2022_cop27, n_rtrmember_exp_in_2022_cop27)
-          
+ 
+        
+    tab1, tab2, tab3 = st.tabs(["List of RtR Partners", "Regional Outreach - Regions Adapt", "RtR Partners (2022-2024)"])
+
+    with tab1:
+        st.dataframe(
+            df_all_partners_summary,
+            column_config={
+                "Website": st.column_config.LinkColumn("Website"),
+            },
+            hide_index=True
+        )
+        
+        st.markdown("<h6 style='color:#FF37D5;'>Use the Partner Finder to explore RtR partners' pledges and plans in greater detail</h6>", unsafe_allow_html=True)
+
+    with tab2:
+        st.dataframe(df_regions4,hide_index=True
+        )
+
+    with tab3: 
+        col1, col2, col3 = st.columns([0.5, 2, 0.5])
+        
+        with col2:
+            st.markdown("The number of RtR partners has increased each year.")
+            display_reporting_status(
+                n_all_rtrpartners, n_reporting_partners, n_newpartners, n_rtrmember_exp,
+                n_all_rtrpartners_cop28, reporting_partners_in_2023_cop28, no_reporting_partner_2023_cop28, n_rtrmember_exp_in_2023_cop28,
+                n_all_rtrpartners_2022_cop27, reporting_partners_in_2022_cop27, no_reporting_partners_in_2022_cop27, n_rtrmember_exp_in_2022_cop27
+            )
+        description_metric(df_all_partners_summary,n_all_rtrpartners, n_reporting_partners, n_newpartners, n_rtrmember_exp,
+                                    n_all_rtrpartners_cop28, reporting_partners_in_2023_cop28, no_reporting_partner_2023_cop28, n_rtrmember_exp_in_2023_cop28,
+                                    n_all_rtrpartners_2022_cop27, reporting_partners_in_2022_cop27, no_reporting_partners_in_2022_cop27, n_rtrmember_exp_in_2022_cop27)
+            
     # INDIVIDUALS
     def presentation_metrics_individuals(n_individuals_pledge_in_2022, n_individuals_pledge_in_2023, n_individuals_pledge_in_2024,n_individuals_pledge_in_2024_n_partners,
                                 n_individuals_plan_consolidated_in_2022, n_individuals_plan_consolidated_in_2023, n_individuals_plan_consolidated,n_individuals_all_plans_n_partners):
@@ -3312,7 +3387,7 @@ selected_section = st.sidebar.radio(
 
 
 if 'Campaign Overview' in selected_section:
-    render_main_page()
+    # render_main_page()
     campaign_overview_cop29()
     # current_partners()
     # selfdescription_partner(df_gi)

@@ -65,12 +65,24 @@ def structure_and_format():
     ## Inject CSS with Markdown
     ##
     st.markdown(hide_table_row_index, unsafe_allow_html=True)
-
 structure_and_format()
 
 
 
-#Funciones DATA
+
+## Welcome Partner finder
+def render_main_page_partner_finder(): 
+    logo_path = "images/rtr_partner_finder_banner.png"  
+
+    col1, col2, col3 = st.columns([2,0.5,0.5])
+    with col1: 
+        st.image(logo_path) 
+
+render_main_page_partner_finder()
+
+
+
+
 
 @st.cache_data
 def load_data_cleaned_df_solution_stories():
@@ -100,6 +112,15 @@ def load_data_cleaned_df_gi_summary():
 def load_data_cleaned_df_partner_campaign():
     from etl_process import df_partner_campaign
     return df_partner_campaign
+
+@st.cache_data
+def load_data_df_partners_name():
+    from etl_process import df_partners_name
+    return df_partners_name
+
+
+
+
 
 @st.cache_data 
 def load_data_df_hazards_pledge_plan_vertical():
@@ -162,6 +183,9 @@ def data_gaps():
 
 
 ## Calling the funcions and creating datasets
+
+df_partners_name = load_data_df_partners_name()
+
 df_all_partners_summary = partners_summary()
 df_partner_campaign_tracker = summary_partner_tracking_table()
 df_partner_campaign = load_data_cleaned_df_partner_campaign()
@@ -187,6 +211,9 @@ df_gaps_all = data_gaps()
 
 ## FILTER
 df_all_partners_summary = df_all_partners_summary[df_all_partners_summary['Reporting Status'].isin(['Reporting Partner', 'New Partner'])]
+
+df_all_partners_summary_original = df_all_partners_summary
+
 df_partner_campaign_tracker = df_partner_campaign_tracker[df_partner_campaign_tracker['Org_Type'].isin(['Reporting Partner', 'New Partner ','Member'])]
 
 
@@ -218,10 +245,6 @@ df_2023_plan = df_2023_plan[df_2023_plan['Org_Type'].isin(['Reporting Partner', 
 # st.write('df_to_find_partner')
 # df_partner_campaign
 
-
-
-
-
 # ____________________________________
 # ____________________________________
 # ____________________________________
@@ -244,35 +267,36 @@ df_2023_plan = df_2023_plan[df_2023_plan['Org_Type'].isin(['Reporting Partner', 
 
 
 
-st.markdown('# PARTNER FINDER')
+# st.markdown('# PARTNER FINDER')
 # st.markdown('Partners are at the heart of the campaign, they represent the initiatives that embody the work of the campaign on the ground for building resilience against climate hazards. RtR partners take action in different parts of the world, pursuing different targets and different action focuses, with the common goal of finding ways to contribute to the resilience of vulnerable communities. The Partner Finder enables users to navigate the data provided by our partners, allowing them to search and review information based on customized criteria.')
-st.markdown("""Partners drive the campaign’s on-the-ground resilience work against climate hazards worldwide, targeting diverse goals to support vulnerable communities. 
-            The Partner Finder helps users explore partner data, enabling searches based on custom criteria.
-            """)
+st.markdown("""
+Partners drive the campaign’s on-the-ground resilience work against climate hazards worldwide, targeting diverse goals to support vulnerable communities.<br>
+*The Partner Finder helps users explore partner data, enabling searches based on custom criteria*.
+""", unsafe_allow_html=True)
 
-Instructions = """
-    **INSTRUCTIONS:** Enter criteria and press SEARCH to see matching RtR partners. Select a partner for details, or view all if no criteria are entered.
-"""
+# Instructions = """
+#     **INSTRUCTIONS:** Enter criteria and press SEARCH to see matching RtR partners. Select a partner for details, or view all if no criteria are entered.
+# """
 
-st.markdown(f"""
-    <style>
-    .disclaimer {{
-        color: #112E4D; /* Dark blue text color */
-        background-color: rgba(255, 55, 213, 0.1); /* Light pink background */
-        padding: 10px;
-        border-radius: 5px;
-        border: 2px solid #FF37D5; /* Pink border */
-        font-size: 16px;
-        margin-bottom: 10px; /* Adds space below the disclaimer */
-    }}
-    </style>
-    <div class="disclaimer">
-        {Instructions}
-    </div>
-    """, 
-    unsafe_allow_html=True)
+# st.markdown(f"""
+#     <style>
+#     .disclaimer {{
+#         color: #112E4D; /* Dark blue text color */
+#         background-color: rgba(255, 55, 213, 0.1); /* Light pink background */
+#         padding: 10px;
+#         border-radius: 5px;
+#         border: 2px solid #FF37D5; /* Pink border */
+#         font-size: 16px;
+#         margin-bottom: 10px; /* Adds space below the disclaimer */
+#     }}
+#     </style>
+#     <div class="disclaimer">
+#         {Instructions}
+#     </div>
+#     """, 
+#     unsafe_allow_html=True)
     
-st.sidebar.markdown("[CRITERIA-BASED PARTNER FINDER](#criteria-based-partner-finder)")
+# st.sidebar.markdown("[PARTNER FINDER](#partner-finder)")
 
 # ____________________________________
 # ____________________________________
@@ -330,26 +354,46 @@ country_region_all_options = ['South Asia', 'Europe & Central Asia', 'Middle Eas
 country_subregion_all_options = ['Southern Asia','Southern Europe','Northern Africa','Middle Africa','Caribbean','South America','Western Asia','Australia and New Zealand','Western Europe','Eastern Europe','Central America','Western Africa','Southern Africa','Eastern Africa','South-Eastern Asia','Northern America','Eastern Asia','Northern Europe','Central Asia','Melanesia','Polynesia','Micronesia',]
 
 
+
+# Custom CSS to reduce padding between elements in the same column
+st.markdown("""
+    <style>
+        .stMultiSelect > div {
+                margin-bottom: -10px; /* Adjust bottom spacing between filters */
+                padding: px; /* Add padding around the dropdowns */
+            }
+        .form_submit_button > color #FF37D5
+
+    </style>
+    """, unsafe_allow_html=True)
+
 with st.form("my_form",clear_on_submit=True):
     
-    col1, col2, col3 = st.columns(3)
+    col1, col2, col3, col4, col5 = st.columns(5)
     with col1: 
-        saa_selection = st.multiselect("SAA Systems",      saa_options)
-        hazard_selection = st.multiselect("Climate Hazards",      hazard_options)
-        continent_selection = st.multiselect("Continent",      country_continents_all_options)
+        saa_selection = st.multiselect("SAA Priority Systems",saa_options, placeholder="SAA Priority Systems",help="Sharm-el-Sheikh Adaptation Agenda Priority Systems",)
+        continent_selection = st.multiselect("Continent",country_continents_all_options,placeholder="Continent")
 
     with col2: 
-        priority_selection = st.multiselect('Priority Groups',   priority_options)
-        p_beneficiaries_selection = st.multiselect('Target Beneficiaries',   p_beneficiaries_options)
-        region_selection = st.multiselect("Region",      country_region_all_options)
+        priority_selection = st.multiselect('Priority Groups',   priority_options,placeholder="Priority Groups", help="Priority groups reflect specific populations that have a higher level of vulnerability, exposure or need in the context of a particular initiative's action, acknowledging human rights, social equity, and well-being of future generations")
+        region_selection = st.multiselect("Region", country_region_all_options, placeholder="Region")
         
     with col3:
-        action_cluster_selection = st.multiselect('Action Cluster',   actioncluster_options)
-        All_Countries_selection = st.multiselect('Country',   All_Countries_options)
-        subregion_selection = st.multiselect("Sub Region",      country_subregion_all_options)
+        action_cluster_selection = st.multiselect('Action Cluster',actioncluster_options, placeholder="Action Cluster", help ="Resilience Action Clusters serve to identify and categorise actions focused on building climate resilience.")
+        subregion_selection = st.multiselect("Subregion",country_subregion_all_options, placeholder="Subregion")
+    
+    with col4:
+        hazard_selection = st.multiselect("Climate Hazards",hazard_options,placeholder="Climate Hazards", help ="Hazards are the potential occurrence of a natural or human-induced physical event or trend that may cause loss of life, injury, or other health impacts, as well as damage and loss to property, infrastructure, livelihoods, service provision, ecosystems, and environmental resources.")
+        All_Countries_selection = st.multiselect('Country',All_Countries_options, placeholder="Country")
         
-        
+    with col5:
+         p_beneficiaries_selection = st.multiselect('Beneficiaries',p_beneficiaries_options, placeholder="Beneficiaries", help = "Individuals, companies, cities, regions, and natural systems are the main types of primary beneficiaries of RtR Partners' pledges and plans.")
+    
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.markdown("")
         submitted = st.form_submit_button("SEARCH")
+        
 if submitted:
     st.markdown("")
 
@@ -374,16 +418,18 @@ selection = [priority_selection,saa_selection,action_cluster_selection,hazard_se
 
 ##Showing results 
 if all(not s for s in selection):
-    st.write('All RtR partners are available for selection and exploration.')
+    
+    all_partner_available_text = "All RtR partners are available for selection and exploration"
     st.sidebar.markdown('All RtR partners are available for selection and exploration.')
+    
 else:
-    st.markdown('<span style="color:#FF37D5; font-weight:bold">YOU SELECTED:</span>', unsafe_allow_html=True)
+    # st.markdown('<span style="color:#FF37D5; font-weight:bold">YOU SELECTED:</span>', unsafe_allow_html=True)
     selected_options = []
     for s in selection:
         if s:
             selected_options.extend(s)
     selected_options_str = ', '.join(selected_options)
-    st.write(selected_options_str)
+    # st.write(selected_options_str)
     st.sidebar.markdown("**You Selected:** "+ selected_options_str)
 
 df_to_find_partner_len = len(df_to_find_partner.index)
@@ -430,30 +476,22 @@ df_filtered = df_to_find_partner.iloc[final_list].reset_index(drop=True).sort_va
 #__________________________________________________________________________________________________________________________________________________________________
 # RESULT FROM THE SELECTION
 #__________________________________________________________________________________________________________________________________________________________________
-list_partners = df_filtered.InitName.unique()
-count_partners = str(df_filtered['InitName'].count())
-
-# Create a markdown list by appending each item with a preceding '* '
-markdown_list = '\n'.join(['* ' + item for item in list_partners])
-
-# st.markdown('<span style="color:#FF37D5; font-weight:bold">RESULTS:</span>', unsafe_allow_html=True)
-# Concatenate the markdown list with the count of partners
-
-result = f"There are **{count_partners}** RtR Initiatives that meet your selection criteria:\n{markdown_list}"
-
-# result = f"There are **{count_partners}** RtR Initiatives that meet your selection criteria."
-
-
-if count_partners == str(35):
-    pass
-else:
-    st.sidebar.markdown(f"There are **{count_partners}** RtR Initiatives that meet your selection criteria")
 
 from selection_all import selection_all
 
+list_partners = df_filtered.InitName.unique()
+count_partners = str(df_filtered['InitName'].count()-1)
+markdown_list = '\n'.join(['* ' + item for item in list_partners])
+
 if selection == selection_all:
-     
-    disclaimer = (f"To know more about RtR partners, please use the Partner Selector below.")
+        result = f"There are {count_partners} RtR Initiatives that meet your selection criteria"
+        df_all_partners_summary_general_view = df_all_partners_summary[df_all_partners_summary['Partner Name'].isin(list_partners)]
+
+else: 
+        result = f"There are {count_partners} RtR Initiatives that meet your selection criteria: {selected_options_str}"
+        df_all_partners_summary_general_view = df_all_partners_summary[df_all_partners_summary['Partner Name'].isin(list_partners)]
+
+if selection == selection_all:
     
     st.markdown(f"""
     <style>
@@ -462,22 +500,63 @@ if selection == selection_all:
         background-color: rgba(255, 55, 213, 0.1); /* Light pink background */
         padding: 10px;
         border-radius: 5px;
-        border: 2px solid #FF37D5; /* Pink border */
-        font-size: 16px;
+        /* border: 2px solid #FF37D5;  Pink border */
+        /*font-size: 16px;*/
         margin-bottom: 10px; /* Adds space below the disclaimer */
     }}
     </style>
     <div class="disclaimer">
-        {disclaimer}
+        {all_partner_available_text}
     </div>
     """, 
     unsafe_allow_html=True)
-    # st.markdown("If you'd like to know more about what each of our partners does within the campaign, please select them from the Partner Selector below.")
-
+    
+    st.dataframe(
+            df_all_partners_summary_original,
+            column_config={
+                "Website": st.column_config.LinkColumn("Website"),
+            },
+            hide_index=True
+        )
+    
+    all_partner_available_text = f"### Select an RtR Partner to explore their pledges, action plans, and more in depth"
+    
+    st.markdown(all_partner_available_text)
 else:
-    st.markdown('')
-    st.write(result)
 
+    # st.write(result)
+    st.markdown(f"""
+    <style>
+    .disclaimer {{
+        color: #112E4D; /* Dark blue text color */
+        background-color: rgba(255, 55, 213, 0.1); /* Light pink background */
+        padding: 10px;
+        border-radius: 5px;
+        /* border: 2px solid #FF37D5;  Pink border */
+        /*font-size: 16px;*/
+        margin-bottom: 10px; /* Adds space below the disclaimer */
+    }}
+    </style>
+    <div class="disclaimer">
+        {result}
+    </div>
+    """, 
+    unsafe_allow_html=True)
+    
+    st.dataframe(
+            df_all_partners_summary_general_view,
+            column_config={
+                "Website": st.column_config.LinkColumn("Website"),
+            },
+            hide_index=True
+        )
+    
+    all_partner_available_text = f"### Select an RtR Partner from the results to explore their pledges, action plans, and more in depth."
+    
+    st.markdown(all_partner_available_text)
+    
+    
+    
 
 
 
@@ -506,16 +585,12 @@ def custom_sort_key(options):
     # Sort the unique_sources list using the custom sorting key
 options = sorted(options, key=custom_sort_key)
 
-
-
-
 # st.markdown("## SELECT A PARTNER")
-st.markdown("## PARTNER SELECTOR")
 partner = st.selectbox(
     "Select a RtR Partner:",
-    options=options)
+    options=options, help ="All RtR partners are available for selection and exploration")
 
-
+df_partners_name = df_partners_name.query('InitName == @partner')
 df_gi_select_filtered = df_gi.query('InitName == @partner')
 df_partner_campaign_filtered  = df_partner_campaign.query('InitName == @partner')
 df_hazards_pledge_plan_vertical_filtered  = df_hazards_pledge_plan_vertical.query('InitName == @partner')
@@ -533,24 +608,83 @@ df_all_partners_summary  = df_all_partners_summary.rename(columns={'Partner Name
 df_all_partners_summary_filtered  = df_all_partners_summary.query('InitName == @partner')
 
 
+
+
+
 st.markdown("____")
 st.sidebar.markdown('[SELECT A PARTNER](#partner-selector)', unsafe_allow_html=True)
 st.sidebar.markdown('**Partner Selected:** '+partner, unsafe_allow_html=True)
 
 
-st.write("### Summary Tables")
-st.write("###### Section under development. Key information is already available in table format.")
 
 
-# Description table
-st.write("#### Description")
-if df_all_partners_summary["InitName"].notna().any():
-    st.write(df_all_partners_summary_filtered )
+# # Set the number of columns for the mosaic
+# num_columns = 3
+
+# # Display logos in a grid layout
+# for i in range(0, len(df_partners_name), num_columns):
+#     cols = st.columns(num_columns)
+#     for idx, col in enumerate(cols):
+#         if i + idx < len(df_partners_name):
+#             partner = df_partners_name.iloc[i + idx]
+#             p_short_name = partner['short_name']
+#             p_full_name = partner['name_only']
+#             logo = partner['logo']
+            
+#             try:
+#                 # Open the image file
+#                 image = Image.open(f'images/{logo}.png')
+#                 col.image(image, use_column_width=True)
+#                 col.write(f"{p_full_name} - {p_short_name}".upper())
+#             except Exception as e:
+#                 col.write(f"{p_full_name} - {p_short_name}".upper())
+
+
+
+
+#DISPLAY
+
+try:
+    p_short_name = df_partners_name['short_name'].iloc[0]
+    p_full_name = df_partners_name['name_only'].iloc[0]
+    try:
+        logo = df_partners_name['logo'].iloc[0]
+        image = Image.open('images/'+logo+'.png')
+        col1, col2, col3 = st.columns([0.5,0.2,1.3,])
+        col1.image(image)
+        col3.header((p_full_name + " - " + p_short_name).upper())
+
+    except Exception as e:
+        st.header((p_full_name + " - " + p_short_name).upper())
+except Exception as e:
+    pass
+
+
+if df_all_partners_summary_filtered["InitName"].notna().any():
+    # Iterate over each partner (row) in the DataFrame
+    for idx, row in df_all_partners_summary_filtered.iterrows():
+        # Optional title for each partner
+        # st.markdown(f"### Partner {idx + 1}")
+        for column_name, value in row.items():
+            # Skip the "InitName" column
+            if column_name == "InitName":
+                continue
+            
+            # Check for missing or empty values
+            if pd.isna(value) or value == "":
+                display_value = "Information not reported yet"
+            else:
+                display_value = value
+                
+            # Display each field with its column name as a label
+            st.markdown(f"**{column_name}:** {display_value}")
+        st.markdown("---")  # Add a separator between partners
 else:
-    st.write("No description information has yet been reported by the selected partner.")
+    st.write("")
+    
 
 # Reporting Status table
-st.write("#### Reporting Status")
+st.write("### Reporting Status")
 if df_partner_campaign["InitName"].notna().any():
     st.write(df_partner_campaign_filtered )
 else:
@@ -559,7 +693,6 @@ else:
 # Solution Stories table
 st.write("### Solution Stories")
 if df_solution_stories["InitName"].notna().any():
-    st.write("#### Solution Stories")
     st.write(df_solution_stories_filtered )
 else:
     st.write("No solution stories information has yet been reported by the selected partner.")
@@ -605,24 +738,9 @@ else:
 # ___________________________________
 # ___________________________________
 
-try:
-    p_short_name = df_partner_campaign['short_name'].iloc[0]
-    p_full_name = df_partner_campaign['name_only'].iloc[0]
-    try:
-        logo = df_partner_campaign['logo'].iloc[0]
-        image = Image.open(logo+'.png')
-        col1, col2 = st.columns([0.3,1.7])
-        col1.image(image, width=100)
-        col2.header((p_full_name + " - " + p_short_name).upper())
-
-    except Exception as e:
-        st.header((p_full_name + " - " + p_short_name).upper())
-except Exception as e:
-    pass
 
 
 
-# from presentation_partner import presentation_parter
 # from reporting_status import reporting_status
 # from aggregated_metrics_summary_parter_finder import aggregated_metrics_partner_finder
 # from globalreach_partner_finder import global_reach_partner_finder
@@ -633,12 +751,6 @@ except Exception as e:
 # from action_cluster_to_partner_finder import action_cluster_to_partner_finder
 # from hazards_partner_finder import hazards_partner_finder
 # from solution_stories_partner_finder import solution_stories_partner_finder
-
-
-
-
-
-
 
 
 

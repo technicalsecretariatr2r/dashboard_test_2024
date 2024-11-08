@@ -69,8 +69,17 @@ def structure_and_format():
 structure_and_format()
 
 
+## Welcome Partner finder
+def render_main_page_metrics_framewortk(): 
+    logo_path = "images/rtr_metrics_framework_banner.png"  
 
-st.markdown('# RtR METRICS FRAMEWORK')
+    col1, col2, col3 = st.columns([2,0.5,0.5])
+    with col1: 
+        st.image(logo_path) 
+
+render_main_page_metrics_framewortk()
+
+
 
 
 image_path = 'images/metric_framework_foto.png'

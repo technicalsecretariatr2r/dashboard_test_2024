@@ -1,51 +1,52 @@
-﻿InitName;Master ID;Org_Type;name_only;short_name;logo;;
-Least Developed Countries Universities Consortium on Climate Change (LUCCC) (ICCCAD);33;Legacy;Least Developed Countries Universities Consortium on Climate Change;LUCCC;lucc_logo;;
-International Centre for Climate Change and Development;91;Legacy;International Centre for Climate Change and Development ;ICCCD;;;
-Climate Knowledge and Innovation Community (Climate-KIC) - Resilient Regions (KIC-FRR);92;Legacy;Climate Knowledge and Innovation Community (Climate-KIC) - Resilient Regions;KIC-FRR;;;
-Walk2COP27;93;Legacy;Walk2COP27;WalkCOP27;;;
-Agriculture 1.5 - WBCSD’s food & agriculture climate workstream (WBCSD);94;Legacy;Agriculture 1.5 - WBCSD’s food & agriculture climate workstream;WBCSD;;;
-Resilience knowledge coalition (RKC);95;Legacy;Resilience knowledge coalition;RKC;;;
-The Centre for Climate Justice Glasgow Caledonian University (GCU);96;Legacy;The Centre for Climate Justice Glasgow Caledonian University;GCU;;;
-Adaptation and Resilience Innovation Clusters (ARIC);98;Legacy;Adaptation and Resilience Innovation Clusters;ARIC;;;
-Culture Race to Resilience;99;Legacy;Culture Race to Resilience;CRTR;;;
-GSK (GSK);40;Member;GSK;GSK;;;
-Southern Africa Regional Anticipatory Action Working Group (RAAWG);46;New Partner ;Southern Africa Regional Anticipatory Action Working Group;RAAWG;;;
-Roof over our Heads (ROOH);47;New Partner ;Roof over our Heads;ROOH;;;
-EHAB;48;New Partner ;EHAB;EHAB;;;
-Global Forest Generation/ Acción Andina;49;New Partner ;Global Forest Generation/ Acción Andina;GFG/AA;;;
-UNESCO Youth Climate Action Network (YoU-CAN);50;New Partner ;UNESCO Youth Climate Action Network ;YoU-CAN;;;
-Climate Heritage Network (CHN);97;New Partner ;Climate Heritage Network;CHN;;;
-Cities Race to Resilience (CitiesR2R);2;Reporting Partner;Cities Race to Resilience;CitiesR2R;cities_rtr_logo;;
-Climate Knowledge and Innovation Community (Climate-KIC);4;Reporting Partner;Climate Knowledge and Innovation Community;Climate-KIC;climatekic_logo;;
-Efficiency for Access Coalition (EforA);5;Reporting Partner;Efficiency for Access Coalition;EfoA;efoa_logo;;
-Extreme Heat Resilience Alliance (EHRA);6;Reporting Partner;Extreme Heat Resilience Alliance;EHRA;ehra_logo;;
-Global EverGreening Alliance (GEGA);7;Reporting Partner;Global EverGreening Alliance;GEGA;GEGA_logo;;
-Global Mangrove Alliance (GMA);8;Reporting Partner;Global Mangrove Alliance;GMA;gma_logo;;
-Initiative 20x20 (I20x20);9;Reporting Partner;Initiative 20x20;I20x20;init20x20_logo;;
-Insurance Development Forum (IDF);10;Reporting Partner;Insurance Development Forum;IDF;Df_insureance_devl_for_logo;;
-InsuResilience Global Partnership (IRGP);11;Reporting Partner;InsuResilience Global Partnership;IRGP;insures_logo;;
-International Coalition of Sustainable Infrastructure (ICSI);12;Reporting Partner;International Coalition of Sustainable Infrastructure;ICSI;icsi_logo;;
-Just Rural Transition;13;Reporting Partner;Just Rural Transition;JRT;jruraltrans_logo;;
-Ocean Risk and Resilience Action Alliance (ORRAA);14;Reporting Partner;Ocean Risk and Resilience Action Alliance;ORRAA;orra_logo;;
-OnePlanet Business for Biodiversity (OP2B);15;Reporting Partner;OnePlanet Business for Biodiversity;OP2B;op2b_logo;;
-RegionsAdapt (RegionsAdapt);16;Reporting Partner;RegionsAdapt;RegionsAdapt;region4_logo;;
-Resilience First (RF);17;Reporting Partner;Resilience First;RF;;;
-Climate Resilient Housing (CRH);18;Reporting Partner;Climate Resilient Housing;CRH;crh_logo;;
-Risk-informed Early Action Partnership (REAP);19;Reporting Partner;Risk-informed Early Action Partnership;REAP;reap_logo;;
-Scale for Resilience Nature-based solutions (S4R);20;Reporting Partner;Scale for Resilience Nature-based solutions;S4R;sfor_logo;;
-The Climakers (Climakers);21;Reporting Partner;The Climakers;Climakers;theclimakers_logo;;
-ARISE - United Nations Office for Disaster Risk Reduction (UN ARISE);22;Reporting Partner;ARISE - United Nations Office for Disaster Risk Reduction;UN ARISE;arise_logo;;
-Urban Sustainability Directors Network (USDN);23;Reporting Partner;Urban Sustainability Directors Network;USDN;;;
-Water Resilience Coalition (WRC);24;Reporting Partner;Water Resilience Coalition;WRC;wrc_logo;;
-Coalition for Climate Resilient Investment (CCRI);26;Reporting Partner;Coalition for Climate Resilient Investment;CCRI;CCRI;;
-Adaptation Research Alliance (ARA);27;Reporting Partner;Adaptation Research Alliance;ARA;ARA_logo;;
-BFA Global/ CIFAR Alliance (BFA);29;Reporting Partner;BFA Global/ CIFAR Alliance;BFA;bfglobal_logo;;
-DARAJA (Resurgence) (DARAJA);32;Reporting Partner;DARAJA (Resurgence);DARAJA;daraja_logo;;
-Global Fund for Coral Reefs (GFCR);35;Reporting Partner;Global Fund for Coral Reefs;GFCR;gfcoralreaf_logo;;
-Sanitation and Water for All (SWA);36;Reporting Partner;Sanitation and Water for All;SWA;sanit_water_for_a_logo;;
-Global Resilience Partnership (GRP);37;Reporting Partner;Global Resilience Partnership;GRP;globalresiliencepartnership_logo;;
-Ignite Power;41;Reporting Partner;Ignite Power;IP;ignite_logo;;
-Climate Centre for Cities;42;Reporting Partner;Climate Centre for Cities;CCC;climate_centre_for_cities_logo;;
-Resilient Watersheds (RW);43;Reporting Partner;Resilient Watersheds;RW;;;
-Green Africa Youth Organization (GAYO);44;Reporting Partner;Green Africa Youth Organization;GAYO;gayo_logo;;
-International Transformational Resilience Coalition (ITRC);45;Reporting Partner;International Transformational Resilience Coalition;ITRC;;;
+﻿InitName;Master ID;Org_Type;name_only;short_name;logo
+Least Developed Countries Universities Consortium on Climate Change (LUCCC) (ICCCAD);33;Legacy;Least Developed Countries Universities Consortium on Climate Change;LUCCC;
+International Centre for Climate Change and Development;91;Legacy;International Centre for Climate Change and Development ;ICCCD;
+Climate Knowledge and Innovation Community (Climate-KIC) - Resilient Regions (KIC-FRR);92;Legacy;Climate Knowledge and Innovation Community (Climate-KIC) - Resilient Regions;KIC-FRR;
+Walk2COP27;93;Legacy;Walk2COP27;WalkCOP27;
+Agriculture 1.5 - WBCSD’s food & agriculture climate workstream (WBCSD);94;Legacy;Agriculture 1.5 - WBCSD’s food & agriculture climate workstream;WBCSD;
+Resilience knowledge coalition (RKC);95;Legacy;Resilience knowledge coalition;RKC;
+The Centre for Climate Justice Glasgow Caledonian University (GCU);96;Legacy;The Centre for Climate Justice Glasgow Caledonian University;GCU;
+Adaptation and Resilience Innovation Clusters (ARIC);98;Legacy;Adaptation and Resilience Innovation Clusters;ARIC;
+Culture Race to Resilience;99;Legacy;Culture Race to Resilience;CRTR;
+GSK (GSK);40;Member;GSK;GSK;logo_gsk
+Climate Heritage Network (CHN);97;New Partner ;Climate Heritage Network;CHN;logo_climate_heritage_network
+EHAB;48;New Partner ;EHAB;EHAB;logo_ehab
+Global Forest Generation/ Acción Andina;49;New Partner ;Global Forest Generation/ Acción Andina;GFG/AA;logo_global_forest_generation_accion_andina
+Roof over our Heads (ROOH);47;New Partner ;Roof over our Heads;ROOH;logo_roof_over_our_heads
+Southern Africa Regional Anticipatory Action Working Group (RAAWG);46;New Partner ;Southern Africa Regional Anticipatory Action Working Group;RAAWG;logo_southernafrica_regional_anticipatory_action_workinggroup
+UNESCO Youth Climate Action Network (YoU-CAN);50;New Partner ;UNESCO Youth Climate Action Network ;YoU-CAN;logo_unesco_youthclimate_action_network
+The International Land and Forest Tenure Facility (ILFTF);51;New Partner ;The International Land and Forest Tenure Facility;ILFTF;
+Adaptation Research Alliance (ARA);27;Reporting Partner;Adaptation Research Alliance;ARA;logo_adaptation_research_alliance
+ARISE - United Nations Office for Disaster Risk Reduction (UN ARISE);22;Reporting Partner;ARISE - United Nations Office for Disaster Risk Reduction;UN ARISE;logo_arise
+BFA Global/ CIFAR Alliance (BFA);29;Reporting Partner;BFA Global/ CIFAR Alliance;BFA;logo_bfa_global
+Cities Race to Resilience (CitiesR2R);2;Reporting Partner;Cities Race to Resilience;CitiesR2R;logo_cities_rtr
+Climate Centre for Cities;42;Reporting Partner;Climate Centre for Cities;CCC;logo_climate_centre_for_cities
+Climate Knowledge and Innovation Community (Climate-KIC);4;Reporting Partner;Climate Knowledge and Innovation Community;Climate-KIC;logo_climate_kic
+Climate Resilient Housing (CRH);18;Reporting Partner;Climate Resilient Housing;CRH;logo_climate_resilient_housing
+Coalition for Climate Resilient Investment (CCRI);26;Reporting Partner;Coalition for Climate Resilient Investment;CCRI;logo_coalition_climate_resilient_investment
+DARAJA (Resurgence) (DARAJA);32;Reporting Partner;DARAJA (Resurgence);DARAJA;logo_daraja
+Efficiency for Access Coalition (EforA);5;Reporting Partner;Efficiency for Access Coalition;EfoA;logo_efficiency_for_access
+Extreme Heat Resilience Alliance (EHRA);6;Reporting Partner;Extreme Heat Resilience Alliance;EHRA;logo_ehra
+Global EverGreening Alliance (GEGA);7;Reporting Partner;Global EverGreening Alliance;GEGA;logo_global_evergreening_alliances
+Global Fund for Coral Reefs (GFCR);35;Reporting Partner;Global Fund for Coral Reefs;GFCR;logo_global_fund_coral_reefs
+Global Mangrove Alliance (GMA);8;Reporting Partner;Global Mangrove Alliance;GMA;logo_global_mangrove_alliance
+Global Resilience Partnership (GRP);37;Reporting Partner;Global Resilience Partnership;GRP;logo_global_resilience_partnership
+Green Africa Youth Organization (GAYO);44;Reporting Partner;Green Africa Youth Organization;GAYO;logo_green_africa_youth_organizations
+Ignite Power;41;Reporting Partner;Ignite Power;IP;logo_ignite_power
+Initiative 20x20 (I20x20);9;Reporting Partner;Initiative 20x20;I20x20;logo_initiative_20x20
+Insurance Development Forum (IDF);10;Reporting Partner;Insurance Development Forum;IDF;logo_insurance_development_forum
+InsuResilience Global Partnership (IRGP);11;Reporting Partner;InsuResilience Global Partnership;IRGP;logo_insureslience_global_partnership
+International Coalition of Sustainable Infrastructure (ICSI);12;Reporting Partner;International Coalition of Sustainable Infrastructure;ICSI;logo_international_coalition_sustainable_infrastructure
+International Transformational Resilience Coalition (ITRC);45;Reporting Partner;International Transformational Resilience Coalition;ITRC;logo_international_transformational_resilience_coalition
+Just Rural Transition;13;Reporting Partner;Just Rural Transition;JRT;logo_just_rural_transition
+Ocean Risk and Resilience Action Alliance (ORRAA);14;Reporting Partner;Ocean Risk and Resilience Action Alliance;ORRAA;logo_ocean_risk_resilience_action_resilience
+OnePlanet Business for Biodiversity (OP2B);15;Reporting Partner;OnePlanet Business for Biodiversity;OP2B;logo_OP2B
+Risk-informed Early Action Partnership (REAP);19;Reporting Partner;Risk-informed Early Action Partnership;REAP;logo_reap
+RegionsAdapt (RegionsAdapt);16;Reporting Partner;RegionsAdapt;RegionsAdapt;logo_regions_adapt
+Resilience First (RF);17;Reporting Partner;Resilience First;RF;logo_resilience_first
+Resilient Watersheds (RW);43;Reporting Partner;Resilient Watersheds;RW;logo_resilient_watersheds
+Sanitation and Water for All (SWA);36;Reporting Partner;Sanitation and Water for All;SWA;logo_sanitation_waterforall
+Scale for Resilience Nature-based solutions (S4R);20;Reporting Partner;Scale for Resilience Nature-based solutions;S4R;logo_scale_for_resilience
+The Climakers (Climakers);21;Reporting Partner;The Climakers;Climakers;logo_theclimakers
+Urban Sustainability Directors Network (USDN);23;Reporting Partner;Urban Sustainability Directors Network;USDN;logo_usdn
+Water Resilience Coalition (WRC);24;Reporting Partner;Water Resilience Coalition;WRC;logo_water_resilience_coalition

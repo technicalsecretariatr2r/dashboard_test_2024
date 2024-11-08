@@ -68,6 +68,21 @@ structure_and_format()
 
 
 
+
+## Welcome Partner finder
+def render_main_page_solution_stories(): 
+    logo_path = "images/rtr_solutionstories_banner.png"  
+
+    col1, col2, col3 = st.columns([2,0.5,0.5])
+    with col1: 
+        st.image(logo_path) 
+
+render_main_page_solution_stories()
+
+
+
+
+
 ##Uploading Data
 
 @st.cache_data
@@ -262,11 +277,7 @@ df_solution_stories['country_subregion_all'] = df_solution_stories[subregions_pl
 
 ##Welcome 
 col1,col2 = st.columns([1,1])
-col1.markdown('# SOLUTION STORIES')
-col2.markdown("")
-col2.markdown("")
-col2.markdown("##### *RtR Partners sharing experiencies and solutions*")
-
+# 
 st.markdown('The Solution Stories selection tool is designed to provide users with access to a comprehensive collection of case studies and narratives focused on climate resilience solutions. These stories highlight successful strategies and initiatives aligned with the Sharm El Sheikh Adaptation Agenda (SAA) Priority Systems. By filtering the available solution stories based on specific criteria users can tailor their search to find relevant examples of adaptation and resilience in response to climate change challenges.')
 
 
